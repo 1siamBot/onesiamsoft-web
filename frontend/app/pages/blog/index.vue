@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- Hero with Image -->
-    <section class="relative pt-16">
-      <div class="absolute inset-0 h-[450px]">
+    <section class="relative pt-16 overflow-hidden">
+      <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&h=600&fit=crop&q=80"
           alt="Blog" class="img-cover" />
         <div class="absolute inset-0 bg-gradient-to-b from-[#0c1222]/80 via-[#0c1222]/70 to-[#0c1222]"></div>
