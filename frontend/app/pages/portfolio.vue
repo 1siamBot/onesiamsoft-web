@@ -36,10 +36,9 @@
             :href="project.url" target="_blank" rel="noopener noreferrer"
             class="card card-hover overflow-hidden group cursor-pointer">
             <!-- Preview -->
-            <div class="relative h-56 overflow-hidden" :class="project.gradient">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Icon :name="project.icon" class="w-20 h-20 text-white/20 group-hover:scale-110 transition-transform duration-500" />
-              </div>
+            <div class="relative h-56 overflow-hidden bg-gray-100">
+              <img :src="project.screenshot" :alt="project.title" 
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
               <!-- Overlay on hover -->
               <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div class="flex items-center gap-2 text-white font-semibold">
@@ -114,8 +113,7 @@ const projects = [
     url: 'https://metasocial24hr.com/',
     category: 'Web Platform',
     badgeClass: 'bg-blue-50 text-blue-700 ring-1 ring-blue-100',
-    gradient: 'bg-gradient-to-br from-violet-500 to-purple-700',
-    icon: 'lucide:share-2',
+    screenshot: 'https://api.microlink.io/?url=https://metasocial24hr.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=720',
     year: '2026',
     desc: 'แพลตฟอร์มบริการด้านโซเชียลมีเดียครบวงจร ปั้มไลค์ ปั้มติดตาม เพิ่มยอดขายการตลาด รองรับ API สำหรับตัวแทนจำหน่าย',
     tech: ['Web App', 'Payment Gateway', 'API', 'Social Media'],
@@ -125,8 +123,7 @@ const projects = [
     url: 'https://onesiamsoft.com/',
     category: 'Web Application',
     badgeClass: 'bg-emerald-50 text-emerald-700 ring-1 ring-emerald-100',
-    gradient: 'bg-gradient-to-br from-primary-500 to-primary-700',
-    icon: 'lucide:cloud',
+    screenshot: 'https://api.microlink.io/?url=https://onesiamsoft.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=720',
     year: '2026',
     desc: 'เว็บไซต์องค์กรสำหรับบริษัท วัน สยามซอฟท์ จำกัด ให้บริการ Cloud Server, Web Hosting, Domain และ Custom Solutions',
     tech: ['NuxtJS', 'NestJS', 'Prisma', 'PostgreSQL'],

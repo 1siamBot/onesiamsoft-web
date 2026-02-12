@@ -8,7 +8,6 @@
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
         <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-3xl"></div>
-        <!-- Grid pattern -->
         <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
       </div>
 
@@ -39,7 +38,7 @@
             </div>
 
             <!-- Trust indicators -->
-            <div class="mt-10 flex items-center gap-6 text-sm text-gray-500">
+            <div class="mt-10 flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-gray-500">
               <div class="flex items-center gap-2">
                 <Icon name="lucide:shield-check" class="w-4 h-4 text-accent-400" />
                 <span>SSL Free</span>
@@ -58,7 +57,6 @@
           <!-- Hero Visual -->
           <div class="hidden lg:block animate-fade-in">
             <div class="relative">
-              <!-- Floating cards -->
               <div class="absolute -top-4 -left-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 animate-float z-10">
                 <div class="flex items-center gap-3">
                   <div class="w-10 h-10 bg-accent-500/20 rounded-xl flex items-center justify-center">
@@ -83,15 +81,13 @@
                 </div>
               </div>
 
-              <!-- Main visual card -->
-              <div class="bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-                <div class="grid grid-cols-2 gap-4">
-                  <div v-for="item in heroStats" :key="item.label" class="bg-white/5 rounded-2xl p-5 border border-white/5">
-                    <Icon :name="item.icon" class="w-8 h-8 mb-3" :class="item.color" />
-                    <div class="text-2xl font-bold text-white mb-1">{{ item.value }}</div>
-                    <div class="text-gray-500 text-sm">{{ item.label }}</div>
-                  </div>
-                </div>
+              <!-- Server room image -->
+              <div class="rounded-3xl overflow-hidden border border-white/10">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" 
+                  alt="Data Center Server Room" 
+                  class="w-full h-[400px] object-cover" 
+                  loading="eager" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent rounded-3xl"></div>
               </div>
             </div>
           </div>
@@ -99,21 +95,8 @@
       </div>
     </section>
 
-    <!-- Clients/Partners -->
-    <section class="py-12 bg-gray-50 border-b border-gray-100">
-      <div class="section-container">
-        <p class="text-center text-sm text-gray-400 font-medium mb-8 uppercase tracking-wider">ได้รับความไว้วางใจจากองค์กรชั้นนำ</p>
-        <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-40">
-          <div v-for="i in 6" :key="i" class="flex items-center gap-2 text-gray-900">
-            <div class="w-8 h-8 bg-gray-300 rounded-lg"></div>
-            <span class="text-sm font-semibold">Partner {{ i }}</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Stats -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-white border-b border-gray-100">
       <div class="section-container">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div v-for="stat in stats" :key="stat.label" class="text-center">
@@ -136,12 +119,12 @@
           <p class="section-subheading">โซลูชัน Cloud Infrastructure และ Managed Services ที่ออกแบบมาเพื่อรองรับทุกขนาดธุรกิจ</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <NuxtLink to="/services" v-for="service in services" :key="service.title"
             class="card card-hover p-6 group">
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-300"
               :class="service.bgClass">
-              <Icon :name="service.icon" class="w-6 h-6" :class="service.iconClass" />
+              <Icon :name="service.icon" class="w-6 h-6 transition-colors duration-300" :class="service.iconClass" />
             </div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">{{ service.title }}</h3>
             <p class="text-sm text-gray-500 leading-relaxed mb-4">{{ service.desc }}</p>
@@ -157,7 +140,7 @@
     <!-- Why Choose Us -->
     <section class="py-24 bg-white">
       <div class="section-container">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div class="badge-primary mb-4">
               <Icon name="lucide:award" class="w-3.5 h-3.5" />
@@ -181,29 +164,32 @@
             </div>
           </div>
 
-          <!-- Visual -->
+          <!-- Visual with real image -->
           <div class="relative">
-            <div class="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-3xl p-8 lg:p-12">
-              <div class="grid grid-cols-2 gap-4">
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                  <Icon name="lucide:server" class="w-8 h-8 text-primary-500 mb-3" />
-                  <div class="text-2xl font-bold text-gray-900">99.9%</div>
-                  <div class="text-sm text-gray-500">Uptime Guarantee</div>
+            <div class="rounded-3xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80" 
+                alt="ทีมผู้เชี่ยวชาญ OneSiamSoft" 
+                class="w-full h-[450px] object-cover rounded-3xl" 
+                loading="lazy" />
+            </div>
+            <!-- Overlay stats -->
+            <div class="absolute -bottom-6 left-6 right-6 bg-white rounded-2xl p-5 shadow-xl border border-gray-100">
+              <div class="grid grid-cols-4 gap-4 text-center">
+                <div>
+                  <div class="text-xl font-bold text-gray-900">99.9%</div>
+                  <div class="text-xs text-gray-500">Uptime</div>
                 </div>
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                  <Icon name="lucide:zap" class="w-8 h-8 text-amber-500 mb-3" />
-                  <div class="text-2xl font-bold text-gray-900">&lt;10ms</div>
-                  <div class="text-sm text-gray-500">Response Time</div>
+                <div>
+                  <div class="text-xl font-bold text-gray-900">&lt;10ms</div>
+                  <div class="text-xs text-gray-500">Response</div>
                 </div>
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                  <Icon name="lucide:shield-check" class="w-8 h-8 text-emerald-500 mb-3" />
-                  <div class="text-2xl font-bold text-gray-900">L7</div>
-                  <div class="text-sm text-gray-500">DDoS Protection</div>
+                <div>
+                  <div class="text-xl font-bold text-gray-900">L7</div>
+                  <div class="text-xs text-gray-500">DDoS</div>
                 </div>
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                  <Icon name="lucide:headphones" class="w-8 h-8 text-blue-500 mb-3" />
-                  <div class="text-2xl font-bold text-gray-900">24/7</div>
-                  <div class="text-sm text-gray-500">Expert Support</div>
+                <div>
+                  <div class="text-xl font-bold text-gray-900">24/7</div>
+                  <div class="text-xs text-gray-500">Support</div>
                 </div>
               </div>
             </div>
@@ -268,8 +254,11 @@
 
     <!-- CTA -->
     <section class="relative py-24 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900"></div>
-      <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=80" 
+          alt="" class="w-full h-full object-cover" loading="lazy" />
+        <div class="absolute inset-0 bg-primary-900/90"></div>
+      </div>
       <div class="section-container relative z-10 text-center">
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4 text-balance">
           พร้อมยกระดับธุรกิจดิจิทัลของคุณ?
@@ -299,13 +288,6 @@ useSeoMeta({
   ogTitle: 'OneSiamSoft — Enterprise Cloud Infrastructure',
   ogDescription: 'Trusted cloud infrastructure and hosting solutions for Thai businesses. 99.9% Uptime SLA.',
 })
-
-const heroStats = [
-  { icon: 'lucide:server', value: '10,000+', label: 'Active Servers', color: 'text-primary-400' },
-  { icon: 'lucide:users', value: '5,000+', label: 'Customers', color: 'text-accent-400' },
-  { icon: 'lucide:activity', value: '99.9%', label: 'Uptime SLA', color: 'text-amber-400' },
-  { icon: 'lucide:globe', value: '50,000+', label: 'Domains', color: 'text-blue-400' },
-]
 
 const stats = [
   { value: '99.9%', label: 'Uptime SLA' },

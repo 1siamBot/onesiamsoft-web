@@ -21,8 +21,9 @@
       <div class="section-container">
         <div class="card overflow-hidden">
           <div class="grid lg:grid-cols-2">
-            <div class="h-64 lg:h-auto bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-              <Icon name="lucide:cloud" class="w-24 h-24 text-white/30" />
+            <div class="h-64 lg:h-auto overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80" 
+                alt="Cloud Server" class="w-full h-full object-cover" loading="lazy" />
             </div>
             <div class="p-8 lg:p-12 flex flex-col justify-center">
               <div class="flex items-center gap-2 mb-4">
@@ -61,8 +62,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <article v-for="post in filteredPosts" :key="post.slug"
             class="card card-hover overflow-hidden group cursor-pointer">
-            <div class="h-48 flex items-center justify-center relative overflow-hidden" :class="post.gradient">
-              <Icon :name="post.icon" class="w-16 h-16 text-white/20 group-hover:scale-110 transition-transform duration-500" />
+            <div class="h-48 relative overflow-hidden">
+              <img :src="post.image" :alt="post.title" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
             <div class="p-6">
               <div class="flex items-center gap-2 mb-3">
@@ -93,12 +95,12 @@ const categories = ['ทั้งหมด', 'Cloud', 'Security', 'Hosting', 'SE
 const selectedCategory = ref('ทั้งหมด')
 
 const posts = [
-  { slug: 'cloud-server-101', icon: 'lucide:cloud', gradient: 'bg-gradient-to-br from-blue-500 to-blue-700', category: 'Cloud', categoryClass: 'bg-blue-50 text-blue-700 ring-1 ring-blue-100', date: '12 ก.พ. 2026', readTime: '5 นาที', title: 'Cloud Server คืออะไร? ทำไมธุรกิจคุณถึงต้องใช้', excerpt: 'เรียนรู้พื้นฐานของ Cloud Server และข้อดีที่จะช่วยให้ธุรกิจของคุณเติบโตอย่างมั่นคง' },
-  { slug: 'ssl-importance', icon: 'lucide:shield', gradient: 'bg-gradient-to-br from-emerald-500 to-emerald-700', category: 'Security', categoryClass: 'bg-emerald-50 text-emerald-700 ring-1 ring-emerald-100', date: '10 ก.พ. 2026', readTime: '4 นาที', title: 'ทำไม SSL ถึงสำคัญสำหรับเว็บไซต์ทุกเว็บ', excerpt: 'SSL Certificate ไม่ใช่แค่เรื่องความปลอดภัย แต่ยังส่งผลต่อ SEO และความน่าเชื่อถือ' },
-  { slug: 'choose-hosting', icon: 'lucide:globe', gradient: 'bg-gradient-to-br from-purple-500 to-purple-700', category: 'Hosting', categoryClass: 'bg-purple-50 text-purple-700 ring-1 ring-purple-100', date: '8 ก.พ. 2026', readTime: '6 นาที', title: 'วิธีเลือก Web Hosting ที่เหมาะกับธุรกิจของคุณ', excerpt: 'แนะนำปัจจัยสำคัญในการเลือก hosting ตั้งแต่ความเร็ว ความเสถียร ไปจนถึงบริการหลังการขาย' },
-  { slug: 'seo-basics', icon: 'lucide:search', gradient: 'bg-gradient-to-br from-amber-500 to-amber-700', category: 'SEO', categoryClass: 'bg-amber-50 text-amber-700 ring-1 ring-amber-100', date: '5 ก.พ. 2026', readTime: '7 นาที', title: 'SEO พื้นฐาน: ทำเว็บไซต์ให้ติดหน้าแรก Google', excerpt: 'เทคนิค SEO เบื้องต้นที่ทุกเว็บไซต์ควรทำ เพื่อเพิ่มการมองเห็นบน Search Engine' },
-  { slug: 'wordpress-optimization', icon: 'lucide:pen-tool', gradient: 'bg-gradient-to-br from-cyan-500 to-cyan-700', category: 'WordPress', categoryClass: 'bg-cyan-50 text-cyan-700 ring-1 ring-cyan-100', date: '3 ก.พ. 2026', readTime: '8 นาที', title: 'ปรับแต่ง WordPress ให้เร็วขึ้น 10 เท่า', excerpt: 'เทคนิค optimize WordPress ตั้งแต่ caching, image optimization ไปจนถึงการเลือก hosting' },
-  { slug: 'backup-strategy', icon: 'lucide:database', gradient: 'bg-gradient-to-br from-rose-500 to-rose-700', category: 'Tips', categoryClass: 'bg-rose-50 text-rose-700 ring-1 ring-rose-100', date: '1 ก.พ. 2026', readTime: '5 นาที', title: 'กลยุทธ์ Backup ที่ทุกธุรกิจต้องมี', excerpt: 'การ backup ข้อมูลไม่ใช่ทางเลือก แต่เป็นสิ่งจำเป็น เรียนรู้วิธีวาง backup strategy ที่มีประสิทธิภาพ' },
+  { slug: 'cloud-server-101', image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80', category: 'Cloud', categoryClass: 'bg-blue-50 text-blue-700 ring-1 ring-blue-100', date: '12 ก.พ. 2026', readTime: '5 นาที', title: 'Cloud Server คืออะไร? ทำไมธุรกิจคุณถึงต้องใช้', excerpt: 'เรียนรู้พื้นฐานของ Cloud Server และข้อดีที่จะช่วยให้ธุรกิจของคุณเติบโตอย่างมั่นคง' },
+  { slug: 'ssl-importance', image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=80', category: 'Security', categoryClass: 'bg-emerald-50 text-emerald-700 ring-1 ring-emerald-100', date: '10 ก.พ. 2026', readTime: '4 นาที', title: 'ทำไม SSL ถึงสำคัญสำหรับเว็บไซต์ทุกเว็บ', excerpt: 'SSL Certificate ไม่ใช่แค่เรื่องความปลอดภัย แต่ยังส่งผลต่อ SEO และความน่าเชื่อถือ' },
+  { slug: 'choose-hosting', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80', category: 'Hosting', categoryClass: 'bg-purple-50 text-purple-700 ring-1 ring-purple-100', date: '8 ก.พ. 2026', readTime: '6 นาที', title: 'วิธีเลือก Web Hosting ที่เหมาะกับธุรกิจของคุณ', excerpt: 'แนะนำปัจจัยสำคัญในการเลือก hosting ตั้งแต่ความเร็ว ความเสถียร ไปจนถึงบริการหลังการขาย' },
+  { slug: 'seo-basics', image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&q=80', category: 'SEO', categoryClass: 'bg-amber-50 text-amber-700 ring-1 ring-amber-100', date: '5 ก.พ. 2026', readTime: '7 นาที', title: 'SEO พื้นฐาน: ทำเว็บไซต์ให้ติดหน้าแรก Google', excerpt: 'เทคนิค SEO เบื้องต้นที่ทุกเว็บไซต์ควรทำ เพื่อเพิ่มการมองเห็นบน Search Engine' },
+  { slug: 'wordpress-optimization', image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?w=600&q=80', category: 'WordPress', categoryClass: 'bg-cyan-50 text-cyan-700 ring-1 ring-cyan-100', date: '3 ก.พ. 2026', readTime: '8 นาที', title: 'ปรับแต่ง WordPress ให้เร็วขึ้น 10 เท่า', excerpt: 'เทคนิค optimize WordPress ตั้งแต่ caching, image optimization ไปจนถึงการเลือก hosting' },
+  { slug: 'backup-strategy', image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80', category: 'Tips', categoryClass: 'bg-rose-50 text-rose-700 ring-1 ring-rose-100', date: '1 ก.พ. 2026', readTime: '5 นาที', title: 'กลยุทธ์ Backup ที่ทุกธุรกิจต้องมี', excerpt: 'การ backup ข้อมูลไม่ใช่ทางเลือก แต่เป็นสิ่งจำเป็น เรียนรู้วิธีวาง backup strategy ที่มีประสิทธิภาพ' },
 ]
 
 const filteredPosts = computed(() => {

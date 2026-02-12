@@ -21,8 +21,7 @@
       <div class="section-container">
         <div class="space-y-24">
           <div v-for="(s, i) in services" :key="s.title"
-            class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
-            :class="i % 2 === 1 ? '' : ''">
+            class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <!-- Content -->
             <div :class="i % 2 === 1 ? 'lg:order-2' : ''">
               <div class="badge mb-4" :class="s.badgeClass">
@@ -46,17 +45,10 @@
                 </NuxtLink>
               </div>
             </div>
-            <!-- Visual -->
+            <!-- Visual with real image -->
             <div :class="i % 2 === 1 ? 'lg:order-1' : ''">
-              <div class="rounded-2xl p-8 lg:p-12" :class="s.visualBg">
-                <div class="grid grid-cols-2 gap-4">
-                  <div v-for="stat in s.stats" :key="stat.label"
-                    class="bg-white rounded-xl p-4 shadow-sm">
-                    <Icon :name="stat.icon" class="w-6 h-6 mb-2" :class="stat.color" />
-                    <div class="text-xl font-bold text-gray-900">{{ stat.value }}</div>
-                    <div class="text-xs text-gray-500">{{ stat.label }}</div>
-                  </div>
-                </div>
+              <div class="rounded-2xl overflow-hidden shadow-lg">
+                <img :src="s.image" :alt="s.title" class="w-full h-[350px] object-cover" loading="lazy" />
               </div>
             </div>
           </div>
@@ -92,13 +84,7 @@ const services = [
     title: 'Cloud Server',
     desc: 'Cloud VPS ประสิทธิภาพสูงด้วย SSD NVMe และ Enterprise-Grade Hardware พร้อมระบบ Auto Scaling ที่ปรับทรัพยากรตามการใช้งานจริง ให้คุณจ่ายเฉพาะสิ่งที่ใช้',
     features: ['SSD NVMe ความเร็วสูง', 'Auto Scaling', 'Snapshot & Backup อัตโนมัติ', 'เลือก OS ได้หลากหลาย', 'Full Root Access', 'DDoS Protection L3-L7', 'Control Panel ใช้งานง่าย', 'API สำหรับ DevOps'],
-    visualBg: 'bg-gradient-to-br from-blue-50 to-blue-100/50',
-    stats: [
-      { icon: 'lucide:hard-drive', value: 'NVMe SSD', label: 'Storage', color: 'text-blue-500' },
-      { icon: 'lucide:activity', value: '99.9%', label: 'Uptime SLA', color: 'text-emerald-500' },
-      { icon: 'lucide:shield', value: 'L3-L7', label: 'DDoS Shield', color: 'text-amber-500' },
-      { icon: 'lucide:gauge', value: '10 Gbps', label: 'Network', color: 'text-purple-500' },
-    ],
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
   },
   {
     icon: 'lucide:globe',
@@ -107,13 +93,7 @@ const services = [
     title: 'Web Hosting',
     desc: 'Managed Web Hosting ที่ออกแบบมาเพื่อเว็บไซต์ของคุณ รองรับ PHP ทุกเวอร์ชัน พร้อม cPanel ที่ใช้งานง่าย และฟรี SSL Certificate ทุกแพ็กเกจ',
     features: ['ฟรี SSL Certificate', 'cPanel จัดการง่าย', 'PHP ทุกเวอร์ชัน', 'Unlimited Bandwidth', 'Email Accounts ไม่จำกัด', 'One-Click WordPress Install', 'Daily Backup', 'Free Migration'],
-    visualBg: 'bg-gradient-to-br from-emerald-50 to-emerald-100/50',
-    stats: [
-      { icon: 'lucide:lock', value: 'Free SSL', label: 'ทุกแพ็กเกจ', color: 'text-emerald-500' },
-      { icon: 'lucide:infinity', value: 'Unlimited', label: 'Bandwidth', color: 'text-blue-500' },
-      { icon: 'lucide:refresh-cw', value: 'Daily', label: 'Auto Backup', color: 'text-amber-500' },
-      { icon: 'lucide:headphones', value: '24/7', label: 'Support', color: 'text-rose-500' },
-    ],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
   },
   {
     icon: 'lucide:link',
@@ -122,13 +102,7 @@ const services = [
     title: 'Domain Registration',
     desc: 'จดโดเมนราคาพิเศษ ทั้งโดเมนสากลและโดเมนไทย พร้อมระบบจัดการ DNS ที่ใช้งานง่าย WHOIS Privacy Protection และการโอนย้ายโดเมนฟรี',
     features: ['.com เริ่มต้น 500 บาท/ปี', '.in.th เริ่มต้น 400 บาท/ปี', '.co.th เริ่มต้น 580 บาท/ปี', 'DNS Management', 'WHOIS Privacy', 'โอนย้ายโดเมนฟรี', 'Auto Renewal', 'API Integration'],
-    visualBg: 'bg-gradient-to-br from-purple-50 to-purple-100/50',
-    stats: [
-      { icon: 'lucide:tag', value: '400฿', label: 'เริ่มต้น/ปี', color: 'text-purple-500' },
-      { icon: 'lucide:globe', value: '100+', label: 'TLD รองรับ', color: 'text-blue-500' },
-      { icon: 'lucide:eye-off', value: 'WHOIS', label: 'Privacy', color: 'text-emerald-500' },
-      { icon: 'lucide:settings', value: 'Full DNS', label: 'Management', color: 'text-amber-500' },
-    ],
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80',
   },
   {
     icon: 'lucide:server',
@@ -137,13 +111,7 @@ const services = [
     title: 'Dedicated Server',
     desc: 'เซิร์ฟเวอร์เฉพาะสำหรับองค์กรที่ต้องการความปลอดภัยและประสิทธิภาพสูงสุด ด้วย Hardware ที่จัดสรรให้คุณโดยเฉพาะ พร้อม Full Root Access',
     features: ['Hardware เฉพาะของคุณ', 'Full Root Access', 'DDoS Protection', '99.9% Uptime SLA', 'IPMI/KVM Access', 'Managed หรือ Unmanaged', 'Custom Configuration', 'Hot-swap Support'],
-    visualBg: 'bg-gradient-to-br from-orange-50 to-orange-100/50',
-    stats: [
-      { icon: 'lucide:cpu', value: 'Latest Gen', label: 'CPU', color: 'text-orange-500' },
-      { icon: 'lucide:hard-drive', value: 'NVMe', label: 'Enterprise SSD', color: 'text-blue-500' },
-      { icon: 'lucide:shield-check', value: 'Full', label: 'Root Access', color: 'text-emerald-500' },
-      { icon: 'lucide:clock', value: '99.9%', label: 'Uptime SLA', color: 'text-amber-500' },
-    ],
+    image: 'https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=800&q=80',
   },
 ]
 </script>
