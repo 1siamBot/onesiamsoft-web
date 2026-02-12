@@ -71,6 +71,7 @@ const isHero = computed(() => route.path === '/')
 const navLinks = [
   { to: '/', label: 'หน้าแรก' },
   { to: '/services', label: 'บริการ' },
+  { to: '/portfolio', label: 'ผลงาน' },
   { to: '/blog', label: 'บทความ' },
   { to: '/about', label: 'เกี่ยวกับเรา' },
 ]

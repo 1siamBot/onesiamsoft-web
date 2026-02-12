@@ -118,6 +118,7 @@ const serviceLinks = [
 
 const companyLinks = [
   { label: 'เกี่ยวกับเรา', to: '/about' },
+  { label: 'ผลงาน', to: '/portfolio' },
   { label: 'บทความ', to: '/blog' },
   { label: 'ติดต่อเรา', to: '/contact' },
   { label: 'SLA Agreement', to: '/sla' },
