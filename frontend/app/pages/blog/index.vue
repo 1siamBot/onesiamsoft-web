@@ -16,11 +16,11 @@
     <!-- Featured Post -->
     <section class="pb-12">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="glass-card overflow-hidden">
+        <NuxtLink :to="`/blog/${posts[0].slug}`" class="glass-card-hover overflow-hidden block">
           <div class="flex flex-col lg:flex-row">
-            <div class="w-full lg:w-1/2 h-64 lg:h-auto">
+            <div class="w-full lg:w-1/2 h-64 lg:h-auto overflow-hidden">
               <img :src="`https://images.unsplash.com/${posts[0].image}?w=800&h=500&fit=crop&q=80`"
-                :alt="posts[0].title" class="img-cover" />
+                :alt="posts[0].title" class="img-cover hover:scale-105 transition-transform duration-500" />
             </div>
             <div class="w-full lg:w-1/2 p-8 lg:p-10 flex flex-col justify-center">
               <span class="inline-block text-xs font-medium text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full mb-4 w-fit">
@@ -35,7 +35,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </NuxtLink>
       </div>
     </section>
 
@@ -43,7 +43,7 @@
     <section class="section-padding">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <article v-for="post in posts.slice(1)" :key="post.title" class="glass-card-hover overflow-hidden group">
+          <NuxtLink v-for="post in posts.slice(1)" :key="post.slug" :to="`/blog/${post.slug}`" class="glass-card-hover overflow-hidden group block">
             <div class="h-48 overflow-hidden">
               <img :src="`https://images.unsplash.com/${post.image}?w=600&h=340&fit=crop&q=80`"
                 :alt="post.title" class="img-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
@@ -58,7 +58,7 @@
                 <span>{{ post.readTime }} นาทีอ่าน</span>
               </div>
             </div>
-          </article>
+          </NuxtLink>
         </div>
       </div>
     </section>
@@ -69,12 +69,12 @@
 useSeoMeta({ title: 'บล็อก - OneSiamSoft', description: 'ความรู้เกี่ยวกับ Cloud, Hosting และ IT' })
 
 const posts = [
-  { image: 'photo-1451187580459-43490279c0fa', category: 'Cloud', title: 'Cloud Server คืออะไร? ทำไมธุรกิจยุคใหม่ต้องมี', excerpt: 'ทำความรู้จัก Cloud Server และเหตุผลที่ธุรกิจยุคดิจิทัลควรใช้งาน เพื่อความเสถียร ปลอดภัย และประหยัดค่าใช้จ่ายในระยะยาว', date: '10 ก.พ. 2026', readTime: 5 },
-  { image: 'photo-1555066931-4365d14bab8c', category: 'Security', title: 'วิธีป้องกันเว็บไซต์จาก DDoS Attack', excerpt: 'เรียนรู้วิธีป้องกันเว็บไซต์จากการโจมตี DDoS อย่างมีประสิทธิภาพ', date: '5 ก.พ. 2026', readTime: 7 },
-  { image: 'photo-1504639725590-34d0984388bd', category: 'Hosting', title: 'เลือก Web Hosting อย่างไรให้เหมาะกับเว็บไซต์', excerpt: 'คู่มือเลือก Web Hosting ที่เหมาะสมกับความต้องการของคุณ', date: '1 ก.พ. 2026', readTime: 4 },
-  { image: 'photo-1558494949-ef010cbdcc31', category: 'Server', title: 'Dedicated vs Cloud Server: เลือกอะไรดี?', excerpt: 'เปรียบเทียบข้อดีข้อเสียของ Dedicated Server กับ Cloud Server', date: '28 ม.ค. 2026', readTime: 6 },
-  { image: 'photo-1563986768609-322da13575f2', category: 'Domain', title: 'วิธีเลือกชื่อโดเมนให้ปัง', excerpt: 'เทคนิคการเลือกชื่อโดเมนที่ดีและจดจำง่ายสำหรับธุรกิจ', date: '20 ม.ค. 2026', readTime: 3 },
-  { image: 'photo-1507238691740-187a5b1d37b8', category: 'WordPress', title: 'เร่งความเร็ว WordPress ให้โหลดไวสุดๆ', excerpt: 'รวมเทคนิคปรับแต่ง WordPress ให้โหลดเร็ว ติดอันดับ Google', date: '15 ม.ค. 2026', readTime: 8 },
-  { image: 'photo-1596526131083-e8c633c948d2', category: 'Email', title: 'ทำไมธุรกิจต้องใช้ Business Email', excerpt: 'อีเมลธุรกิจ @yourdomain.com สร้างความน่าเชื่อถือได้อย่างไร', date: '10 ม.ค. 2026', readTime: 4 },
+  { slug: 'cloud-server-คืออะไร', image: 'photo-1451187580459-43490279c0fa', category: 'Cloud', title: 'Cloud Server คืออะไร? ทำไมธุรกิจยุคใหม่ต้องมี', excerpt: 'ทำความรู้จัก Cloud Server และเหตุผลที่ธุรกิจยุคดิจิทัลควรใช้งาน เพื่อความเสถียร ปลอดภัย และประหยัดค่าใช้จ่ายในระยะยาว', date: '10 ก.พ. 2026', readTime: 5 },
+  { slug: 'ป้องกัน-ddos-attack', image: 'photo-1555066931-4365d14bab8c', category: 'Security', title: 'วิธีป้องกันเว็บไซต์จาก DDoS Attack', excerpt: 'เรียนรู้วิธีป้องกันเว็บไซต์จากการโจมตี DDoS อย่างมีประสิทธิภาพ', date: '5 ก.พ. 2026', readTime: 7 },
+  { slug: 'เลือก-web-hosting', image: 'photo-1504639725590-34d0984388bd', category: 'Hosting', title: 'เลือก Web Hosting อย่างไรให้เหมาะกับเว็บไซต์', excerpt: 'คู่มือเลือก Web Hosting ที่เหมาะสมกับความต้องการของคุณ', date: '1 ก.พ. 2026', readTime: 4 },
+  { slug: 'dedicated-vs-cloud-server', image: 'photo-1558494949-ef010cbdcc31', category: 'Server', title: 'Dedicated vs Cloud Server: เลือกอะไรดี?', excerpt: 'เปรียบเทียบข้อดีข้อเสียของ Dedicated Server กับ Cloud Server', date: '28 ม.ค. 2026', readTime: 6 },
+  { slug: 'เลือกชื่อโดเมน', image: 'photo-1563986768609-322da13575f2', category: 'Domain', title: 'วิธีเลือกชื่อโดเมนให้ปัง', excerpt: 'เทคนิคการเลือกชื่อโดเมนที่ดีและจดจำง่ายสำหรับธุรกิจ', date: '20 ม.ค. 2026', readTime: 3 },
+  { slug: 'เร่งความเร็ว-wordpress', image: 'photo-1507238691740-187a5b1d37b8', category: 'WordPress', title: 'เร่งความเร็ว WordPress ให้โหลดไวสุดๆ', excerpt: 'รวมเทคนิคปรับแต่ง WordPress ให้โหลดเร็ว ติดอันดับ Google', date: '15 ม.ค. 2026', readTime: 8 },
+  { slug: 'business-email-สำคัญอย่างไร', image: 'photo-1596526131083-e8c633c948d2', category: 'Email', title: 'ทำไมธุรกิจต้องใช้ Business Email', excerpt: 'อีเมลธุรกิจ @yourdomain.com สร้างความน่าเชื่อถือได้อย่างไร', date: '10 ม.ค. 2026', readTime: 4 },
 ]
 </script>
