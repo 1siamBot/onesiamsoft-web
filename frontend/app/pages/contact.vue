@@ -65,6 +65,6 @@ useSeoMeta({
 const contactInfo = [
   { icon: 'lucide:mail', label: 'อีเมล', value: 'support@onesiamsoft.com' },
   { icon: 'lucide:map-pin', label: 'ที่อยู่', value: '28/99 ซอยหมู่บ้านบ่อฝ้าย ต.หัวหิน อ.หัวหิน จ.ประจวบคีรีขันธ์ 77110' },
-  { icon: 'lucide:clock', label: 'เวลาทำการ', value: 'จันทร์ - ศุกร์ 9:00 - 18:00 น.' },
+  { icon: 'lucide:clock', label: 'เวลาทำการ', value: 'เปิดให้บริการ 24 ชั่วโมง ทุกวัน' },
 ]
 </script>

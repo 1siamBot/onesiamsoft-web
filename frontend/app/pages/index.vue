@@ -42,7 +42,7 @@
           <h2 class="heading-lg mb-4">บริการของเรา</h2>
           <p class="text-muted text-lg">โซลูชันครบวงจรสำหรับโครงสร้างพื้นฐานดิจิทัลของธุรกิจ</p>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="service in services" :key="service.title" class="glass-card-hover p-8">
             <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-6">
               <Icon :name="service.icon" class="w-6 h-6 text-sky-400" />
@@ -130,6 +130,8 @@ const services = [
   { icon: 'lucide:at-sign', title: 'Domain', desc: 'จดโดเมนทุกนามสกุล .com .in.th .co.th ราคาเริ่มต้น 400 บาท' },
   { icon: 'lucide:server', title: 'Dedicated Server', desc: 'เซิร์ฟเวอร์ส่วนตัวสำหรับองค์กรที่ต้องการประสิทธิภาพสูงสุด' },
   { icon: 'lucide:mail', title: 'Business Email', desc: 'อีเมลธุรกิจ @yourdomain.com เพิ่มความน่าเชื่อถือให้แบรนด์' },
+  { icon: 'lucide:layout-template', title: 'WordPress Hosting', desc: 'โฮสติ้งที่ปรับแต่งมาสำหรับ WordPress โดยเฉพาะ เร็ว ปลอดภัย' },
+  { icon: 'lucide:settings', title: 'Custom Server', desc: 'ออกแบบเซิร์ฟเวอร์ตามสเปคที่ต้องการ ปรับแต่งได้ทุกรายละเอียด' },
   { icon: 'lucide:code', title: 'Custom Solutions', desc: 'ออกแบบและพัฒนาระบบตามความต้องการเฉพาะของธุรกิจ' },
 ]
 

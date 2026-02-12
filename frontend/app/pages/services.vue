@@ -33,8 +33,8 @@
             </div>
           </div>
           <div :class="i % 2 ? 'lg:[direction:ltr]' : ''">
-            <div class="glass-card aspect-video flex items-center justify-center">
-              <Icon :name="service.icon" class="w-20 h-20 text-white/10" />
+            <div class="glass-card aspect-video overflow-hidden rounded-2xl">
+              <img :src="service.image" :alt="service.title" class="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
         </div>
@@ -65,6 +65,7 @@ const services = [
     desc: 'เซิร์ฟเวอร์คลาวด์ประสิทธิภาพสูง ใช้ SSD NVMe รองรับ Auto-scaling พร้อมระบบ Backup อัตโนมัติ',
     features: ['SSD NVMe Storage', 'Auto-scaling', 'Daily Backup', 'DDoS Protection', '99.9% Uptime SLA'],
     price: '299 ฿/เดือน',
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80',
   },
   {
     icon: 'lucide:globe',
@@ -72,6 +73,7 @@ const services = [
     desc: 'เว็บโฮสติ้งที่เสถียรและรวดเร็ว รองรับ CMS ยอดนิยม พร้อม SSL ฟรี',
     features: ['LiteSpeed Web Server', 'Free SSL Certificate', 'cPanel Control Panel', 'One-click Installer', 'Email Accounts'],
     price: '99 ฿/เดือน',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
   },
   {
     icon: 'lucide:at-sign',
@@ -79,6 +81,7 @@ const services = [
     desc: 'จดโดเมนทุกนามสกุล พร้อมระบบจัดการ DNS ที่ใช้งานง่าย',
     features: ['.com เริ่มต้น 500฿/ปี', '.in.th เริ่มต้น 400฿/ปี', '.co.th เริ่มต้น 580฿/ปี', 'DNS Management', 'WHOIS Privacy'],
     price: '400 ฿/ปี',
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80',
   },
   {
     icon: 'lucide:server',
@@ -86,6 +89,7 @@ const services = [
     desc: 'เซิร์ฟเวอร์เฉพาะสำหรับองค์กรที่ต้องการทรัพยากรและความปลอดภัยสูงสุด',
     features: ['Full Root Access', 'Hardware RAID', 'Redundant Network', 'Custom Configuration', 'Managed Services'],
     price: '4,900 ฿/เดือน',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
   },
   {
     icon: 'lucide:mail',
@@ -93,6 +97,7 @@ const services = [
     desc: 'อีเมลธุรกิจ @yourdomain.com เพิ่มความน่าเชื่อถือ พร้อม Anti-spam',
     features: ['Custom Domain Email', 'Anti-Spam & Virus', 'Webmail Access', 'IMAP/POP3/SMTP', 'Calendar & Contacts'],
     price: '59 ฿/เดือน',
+    image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&q=80',
   },
   {
     icon: 'lucide:layout-template',
@@ -100,6 +105,7 @@ const services = [
     desc: 'โฮสติ้งที่ออกแบบมาเฉพาะสำหรับ WordPress ด้วย LiteSpeed Cache',
     features: ['Optimized for WordPress', 'LiteSpeed Cache', 'Staging Environment', 'Auto Updates', 'Malware Scanning'],
     price: '149 ฿/เดือน',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80',
   },
   {
     icon: 'lucide:settings',
@@ -107,6 +113,7 @@ const services = [
     desc: 'ออกแบบเซิร์ฟเวอร์ตามสเปคที่ต้องการ ปรับแต่งได้ทุกรายละเอียด',
     features: ['Custom Hardware Spec', 'Choice of OS', 'Network Configuration', 'Load Balancer', 'Monitoring Tools'],
     price: null,
+    image: 'https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=800&q=80',
   },
   {
     icon: 'lucide:code',
@@ -114,6 +121,7 @@ const services = [
     desc: 'พัฒนาระบบซอฟต์แวร์ตามความต้องการเฉพาะของธุรกิจ',
     features: ['Web Application', 'API Development', 'System Integration', 'DevOps & CI/CD', 'Consulting'],
     price: null,
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80',
   },
 ]
 </script>

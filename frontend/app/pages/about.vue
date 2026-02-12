@@ -30,6 +30,49 @@
       </div>
     </section>
 
+    <!-- Company Info -->
+    <section class="py-20 border-t border-white/[0.06]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="glass-card p-8 lg:p-12">
+          <h2 class="heading-md mb-8">ข้อมูลบริษัท</h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <Icon name="lucide:building-2" class="w-5 h-5 text-sky-400 mt-0.5 shrink-0" />
+                <div>
+                  <div class="text-sm text-gray-500">ชื่อบริษัท</div>
+                  <div class="text-white">บริษัท วัน สยามซอฟท์ จำกัด (สำนักงานใหญ่)</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <Icon name="lucide:map-pin" class="w-5 h-5 text-sky-400 mt-0.5 shrink-0" />
+                <div>
+                  <div class="text-sm text-gray-500">ที่อยู่</div>
+                  <div class="text-white">28/99 ซอยหมู่บ้านบ่อฝ้าย ต.หัวหิน อ.หัวหิน จ.ประจวบคีรีขันธ์ 77110</div>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <Icon name="lucide:mail" class="w-5 h-5 text-sky-400 mt-0.5 shrink-0" />
+                <div>
+                  <div class="text-sm text-gray-500">อีเมล</div>
+                  <div class="text-white">support@onesiamsoft.com</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <Icon name="lucide:globe" class="w-5 h-5 text-sky-400 mt-0.5 shrink-0" />
+                <div>
+                  <div class="text-sm text-gray-500">เว็บไซต์</div>
+                  <div class="text-white">www.onesiamsoft.com</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Values -->
     <section class="section-padding border-t border-white/[0.06]">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">

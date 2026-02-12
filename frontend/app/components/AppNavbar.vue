@@ -22,7 +22,7 @@
             {{ link.label }}
           </NuxtLink>
           <NuxtLink to="/contact" class="btn-secondary text-sm !px-5 !py-2">
-            เริ่มต้นใช้งาน
+            ติดต่อเรา
           </NuxtLink>
         </div>
 
@@ -54,7 +54,7 @@
             {{ link.label }}
           </NuxtLink>
           <NuxtLink to="/contact" class="block mt-4 btn-primary text-center text-sm" @click="mobileOpen = false">
-            เริ่มต้นใช้งาน
+            ติดต่อเรา
           </NuxtLink>
         </div>
       </div>
@@ -64,11 +64,11 @@
 
 <script setup>
 const links = [
+  { label: 'หน้าแรก', to: '/' },
   { label: 'บริการ', to: '/services' },
   { label: 'ผลงาน', to: '/portfolio' },
   { label: 'บทความ', to: '/blog' },
   { label: 'เกี่ยวกับเรา', to: '/about' },
-  { label: 'ติดต่อ', to: '/contact' },
 ]
 
 const mobileOpen = ref(false)
