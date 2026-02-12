@@ -81,7 +81,7 @@ const slug = route.params.slug
 
 const allPosts = [
   {
-    slug: 'cloud-server-คืออะไร',
+    slug: 'what-is-cloud-server',
     image: 'photo-1451187580459-43490279c0fa',
     category: 'Cloud',
     title: 'Cloud Server คืออะไร? ทำไมธุรกิจยุคใหม่ต้องมี',
@@ -101,7 +101,7 @@ const allPosts = [
     ]
   },
   {
-    slug: 'ป้องกัน-ddos-attack',
+    slug: 'prevent-ddos-attack',
     image: 'photo-1555066931-4365d14bab8c',
     category: 'Security',
     title: 'วิธีป้องกันเว็บไซต์จาก DDoS Attack',
@@ -119,7 +119,7 @@ const allPosts = [
     ]
   },
   {
-    slug: 'เลือก-web-hosting',
+    slug: 'choose-web-hosting',
     image: 'photo-1504639725590-34d0984388bd',
     category: 'Hosting',
     title: 'เลือก Web Hosting อย่างไรให้เหมาะกับเว็บไซต์',
@@ -136,7 +136,7 @@ const allPosts = [
     ]
   },
   {
-    slug: 'dedicated-vs-cloud-server',
+    slug: 'dedicated-vs-cloud',
     image: 'photo-1558494949-ef010cbdcc31',
     category: 'Server',
     title: 'Dedicated vs Cloud Server: เลือกอะไรดี?',
@@ -153,7 +153,7 @@ const allPosts = [
     ]
   },
   {
-    slug: 'เลือกชื่อโดเมน',
+    slug: 'choose-domain-name',
     image: 'photo-1563986768609-322da13575f2',
     category: 'Domain',
     title: 'วิธีเลือกชื่อโดเมนให้ปัง',
@@ -168,7 +168,7 @@ const allPosts = [
     ]
   },
   {
-    slug: 'เร่งความเร็ว-wordpress',
+    slug: 'speed-up-wordpress',
     image: 'photo-1507238691740-187a5b1d37b8',
     category: 'WordPress',
     title: 'เร่งความเร็ว WordPress ให้โหลดไวสุดๆ',
@@ -185,7 +185,7 @@ const allPosts = [
     ]
   },
   {
-    slug: 'business-email-สำคัญอย่างไร',
+    slug: 'why-business-email',
     image: 'photo-1596526131083-e8c633c948d2',
     category: 'Email',
     title: 'ทำไมธุรกิจต้องใช้ Business Email',
