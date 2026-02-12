@@ -1,41 +1,40 @@
 <template>
   <div>
     <!-- Hero -->
-    <section class="pt-32 pb-20">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="max-w-3xl">
-          <p class="text-sm text-sky-400 font-medium tracking-wide uppercase mb-4">Services</p>
-          <h1 class="heading-xl mb-6">บริการ<span class="accent">ครบวงจร</span></h1>
-          <p class="text-lg text-gray-400 leading-relaxed">โซลูชันโครงสร้างพื้นฐานดิจิทัลที่ออกแบบมาเพื่อรองรับทุกขนาดธุรกิจ</p>
-        </div>
+    <section class="pt-32 pb-16 relative overflow-hidden">
+      <div class="gradient-orb w-[500px] h-[500px] bg-sky-500 -top-40 right-0"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <h1 class="text-4xl lg:text-6xl font-bold text-white tracking-tight">บริการของเรา</h1>
+        <p class="section-subtitle mt-4">โซลูชัน Cloud และ IT ครบวงจร สำหรับทุกขนาดธุรกิจ</p>
       </div>
     </section>
 
     <!-- Services -->
-    <section v-for="(service, i) in services" :key="service.title" class="py-20 border-t border-white/[0.06]">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-16 items-center" :class="i % 2 ? 'lg:[direction:rtl]' : ''">
-          <div :class="i % 2 ? 'lg:[direction:ltr]' : ''">
-            <div class="w-14 h-14 rounded-2xl bg-sky-500/10 flex items-center justify-center mb-6">
-              <Icon :name="service.icon" class="w-7 h-7 text-sky-400" />
-            </div>
-            <h2 class="heading-md mb-4">{{ service.title }}</h2>
-            <p class="text-muted text-lg mb-8">{{ service.desc }}</p>
-            <ul class="space-y-3">
-              <li v-for="f in service.features" :key="f" class="flex items-center gap-3 text-gray-300">
-                <Icon name="lucide:check" class="w-5 h-5 text-sky-400 shrink-0" />
-                <span>{{ f }}</span>
-              </li>
-            </ul>
-            <div v-if="service.price" class="mt-8">
-              <span class="text-sm text-gray-500">เริ่มต้น</span>
-              <span class="text-2xl font-bold text-white ml-2">{{ service.price }}</span>
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto px-6 space-y-24">
+        <div v-for="(s, i) in services" :key="s.title"
+          :class="['flex flex-col gap-10 items-center', i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse']">
+          <!-- Image -->
+          <div class="w-full lg:w-1/2">
+            <div class="glass-card overflow-hidden">
+              <img :src="`https://images.unsplash.com/${s.image}?w=800&h=500&fit=crop`"
+                :alt="s.title" class="w-full h-64 lg:h-80 object-cover" loading="lazy" />
             </div>
           </div>
-          <div :class="i % 2 ? 'lg:[direction:ltr]' : ''">
-            <div class="glass-card aspect-video overflow-hidden rounded-2xl">
-              <img :src="service.image" :alt="service.title" class="w-full h-full object-cover" loading="lazy" />
+          <!-- Content -->
+          <div class="w-full lg:w-1/2">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-4">
+              <Icon :name="s.icon" class="w-6 h-6 text-sky-400" />
             </div>
+            <h2 class="text-2xl lg:text-3xl font-bold text-white mb-3">{{ s.title }}</h2>
+            <p class="text-gray-400 leading-relaxed mb-6">{{ s.desc }}</p>
+            <ul class="space-y-2 mb-6">
+              <li v-for="f in s.features" :key="f" class="flex items-center gap-2 text-gray-400 text-sm">
+                <Icon name="lucide:check" class="w-4 h-4 text-sky-400 shrink-0" />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="text-sky-400 font-semibold text-lg">{{ s.price }}</div>
           </div>
         </div>
       </div>
@@ -43,85 +42,73 @@
 
     <!-- CTA -->
     <section class="section-padding">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-        <h2 class="heading-lg mb-6">ต้องการคำปรึกษา?</h2>
-        <p class="text-muted text-lg max-w-xl mx-auto mb-10">ทีมผู้เชี่ยวชาญพร้อมช่วยคุณเลือกบริการที่เหมาะสมที่สุด</p>
-        <NuxtLink to="/contact" class="btn-primary text-base">ติดต่อเรา</NuxtLink>
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="glass-card p-12 text-center relative overflow-hidden">
+          <div class="gradient-orb w-[250px] h-[250px] bg-sky-500 -top-16 -right-16"></div>
+          <div class="relative z-10">
+            <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4">ไม่แน่ใจว่าต้องใช้บริการอะไร?</h2>
+            <p class="text-gray-400 mb-8">ปรึกษาทีมงานของเราฟรี เราจะช่วยแนะนำบริการที่เหมาะกับธุรกิจของคุณ</p>
+            <NuxtLink to="/contact" class="inline-block px-8 py-3.5 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/20">
+              ปรึกษาฟรี
+            </NuxtLink>
+          </div>
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-useSeoMeta({
-  title: 'บริการ — OneSiamSoft',
-  description: 'บริการ Cloud Server, Web Hosting, Domain, Dedicated Server และอื่นๆ',
-})
+useSeoMeta({ title: 'บริการ - OneSiamSoft', description: 'บริการ Cloud Server, Web Hosting และ IT Solutions ครบวงจร' })
 
 const services = [
   {
-    icon: 'lucide:cloud',
-    title: 'Cloud Server',
-    desc: 'เซิร์ฟเวอร์คลาวด์ประสิทธิภาพสูง ใช้ SSD NVMe รองรับ Auto-scaling พร้อมระบบ Backup อัตโนมัติ',
-    features: ['SSD NVMe Storage', 'Auto-scaling', 'Daily Backup', 'DDoS Protection', '99.9% Uptime SLA'],
-    price: '299 ฿/เดือน',
-    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80',
+    icon: 'lucide:cloud', title: 'Cloud Server', image: 'photo-1544197150-b99a580bb7a8',
+    desc: 'เซิร์ฟเวอร์บนคลาวด์ประสิทธิภาพสูง รองรับการใช้งานตั้งแต่เว็บไซต์ขนาดเล็กจนถึง Enterprise',
+    features: ['NVMe SSD Storage', 'Auto Scaling', '99.9% Uptime SLA', 'Backup อัตโนมัติ', 'DDoS Protection'],
+    price: 'เริ่มต้น 590 บาท/เดือน'
   },
   {
-    icon: 'lucide:globe',
-    title: 'Web Hosting',
-    desc: 'เว็บโฮสติ้งที่เสถียรและรวดเร็ว รองรับ CMS ยอดนิยม พร้อม SSL ฟรี',
-    features: ['LiteSpeed Web Server', 'Free SSL Certificate', 'cPanel Control Panel', 'One-click Installer', 'Email Accounts'],
-    price: '99 ฿/เดือน',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+    icon: 'lucide:globe', title: 'Web Hosting', image: 'photo-1460925895917-afdab827c52f',
+    desc: 'เว็บโฮสติ้ง cPanel เร็วและเสถียร เหมาะสำหรับเว็บไซต์ทุกขนาด',
+    features: ['cPanel Control Panel', 'Free SSL Certificate', 'Unlimited Email Accounts', 'One-Click Installer', 'Daily Backup'],
+    price: 'เริ่มต้น 199 บาท/เดือน'
   },
   {
-    icon: 'lucide:at-sign',
-    title: 'Domain Registration',
-    desc: 'จดโดเมนทุกนามสกุล พร้อมระบบจัดการ DNS ที่ใช้งานง่าย',
-    features: ['.com เริ่มต้น 500฿/ปี', '.in.th เริ่มต้น 400฿/ปี', '.co.th เริ่มต้น 580฿/ปี', 'DNS Management', 'WHOIS Privacy'],
-    price: '400 ฿/ปี',
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80',
+    icon: 'lucide:at-sign', title: 'Domain Name', image: 'photo-1563986768609-322da13575f2',
+    desc: 'จดโดเมนทุกนามสกุลยอดนิยม .com .th .co.th .in.th พร้อม DNS Management',
+    features: ['DNS Management', 'Domain Privacy', 'Auto Renewal', 'Transfer ง่าย', 'ราคาถูกที่สุด'],
+    price: 'เริ่มต้น 400 บาท/ปี'
   },
   {
-    icon: 'lucide:server',
-    title: 'Dedicated Server',
-    desc: 'เซิร์ฟเวอร์เฉพาะสำหรับองค์กรที่ต้องการทรัพยากรและความปลอดภัยสูงสุด',
-    features: ['Full Root Access', 'Hardware RAID', 'Redundant Network', 'Custom Configuration', 'Managed Services'],
-    price: '4,900 ฿/เดือน',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+    icon: 'lucide:server', title: 'Dedicated Server', image: 'photo-1558494949-ef010cbdcc31',
+    desc: 'เซิร์ฟเวอร์ส่วนตัวพลังสูง สำหรับธุรกิจที่ต้องการทรัพยากรเต็มที่',
+    features: ['Full Root Access', 'Hardware RAID', 'Dedicated IP', 'Managed Service', 'Custom Configuration'],
+    price: 'เริ่มต้น 3,500 บาท/เดือน'
   },
   {
-    icon: 'lucide:mail',
-    title: 'Business Email',
-    desc: 'อีเมลธุรกิจ @yourdomain.com เพิ่มความน่าเชื่อถือ พร้อม Anti-spam',
-    features: ['Custom Domain Email', 'Anti-Spam & Virus', 'Webmail Access', 'IMAP/POP3/SMTP', 'Calendar & Contacts'],
-    price: '59 ฿/เดือน',
-    image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&q=80',
+    icon: 'lucide:mail', title: 'Business Email', image: 'photo-1596526131083-e8c633c948d2',
+    desc: 'อีเมลธุรกิจ @yourdomain.com สร้างความน่าเชื่อถือให้องค์กร',
+    features: ['Custom Domain', 'Spam Filter', 'Webmail Access', '25GB Storage', 'Mobile Sync'],
+    price: 'เริ่มต้น 99 บาท/เดือน'
   },
   {
-    icon: 'lucide:layout-template',
-    title: 'WordPress Hosting',
-    desc: 'โฮสติ้งที่ออกแบบมาเฉพาะสำหรับ WordPress ด้วย LiteSpeed Cache',
-    features: ['Optimized for WordPress', 'LiteSpeed Cache', 'Staging Environment', 'Auto Updates', 'Malware Scanning'],
-    price: '149 ฿/เดือน',
-    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80',
+    icon: 'lucide:file-code', title: 'WordPress Hosting', image: 'photo-1507238691740-187a5b1d37b8',
+    desc: 'โฮสติ้งที่ถูกออกแบบมาเพื่อ WordPress โดยเฉพาะ เร็วและปลอดภัย',
+    features: ['Pre-installed WordPress', 'LiteSpeed Cache', 'Auto Update', 'Staging Environment', 'Free Migration'],
+    price: 'เริ่มต้น 299 บาท/เดือน'
   },
   {
-    icon: 'lucide:settings',
-    title: 'Custom Server',
-    desc: 'ออกแบบเซิร์ฟเวอร์ตามสเปคที่ต้องการ ปรับแต่งได้ทุกรายละเอียด',
-    features: ['Custom Hardware Spec', 'Choice of OS', 'Network Configuration', 'Load Balancer', 'Monitoring Tools'],
-    price: null,
-    image: 'https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=800&q=80',
+    icon: 'lucide:settings', title: 'Custom Server', image: 'photo-1597852074816-d933c7d2b988',
+    desc: 'ออกแบบและประกอบเซิร์ฟเวอร์ตามสเปคที่คุณต้องการ',
+    features: ['เลือก CPU/RAM ได้', 'Storage ตามต้องการ', 'OS ที่ต้องการ', 'Network Configuration', 'Monitoring'],
+    price: 'สอบถามราคา'
   },
   {
-    icon: 'lucide:code',
-    title: 'Custom Solutions',
-    desc: 'พัฒนาระบบซอฟต์แวร์ตามความต้องการเฉพาะของธุรกิจ',
-    features: ['Web Application', 'API Development', 'System Integration', 'DevOps & CI/CD', 'Consulting'],
-    price: null,
-    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80',
+    icon: 'lucide:lightbulb', title: 'Custom Solutions', image: 'photo-1553877522-43269d4ea984',
+    desc: 'โซลูชัน IT ที่ออกแบบเฉพาะสำหรับธุรกิจของคุณ ตั้งแต่ออกแบบจนส่งมอบ',
+    features: ['ออกแบบ Architecture', 'พัฒนาระบบ', 'Migration Service', 'Training', '24/7 Support'],
+    price: 'สอบถามราคา'
   },
 ]
 </script>

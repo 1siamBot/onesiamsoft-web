@@ -2,34 +2,51 @@
   <div>
     <!-- Hero -->
     <section class="relative min-h-screen flex items-center overflow-hidden">
-      <!-- Subtle gradient -->
-      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-sky-500/[0.07] rounded-full blur-[120px]" />
+      <!-- Gradient Orbs -->
+      <div class="gradient-orb w-[600px] h-[600px] bg-sky-500 -top-40 -right-40"></div>
+      <div class="gradient-orb w-[400px] h-[400px] bg-sky-600 bottom-20 -left-20 opacity-10"></div>
 
-      <div class="relative max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20">
-        <div class="max-w-4xl">
-          <p class="text-sm text-sky-400 font-medium tracking-wide uppercase mb-6">Cloud Infrastructure & Solutions</p>
-          <h1 class="heading-xl mb-8">
-            Cloud Infrastructure<br />
-            <span class="accent">ที่ธุรกิจไว้วางใจ</span>
+      <div class="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-5xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
+            Cloud Infrastructure
+            <span class="block text-sky-400 mt-2">ที่ธุรกิจไว้วางใจ</span>
           </h1>
-          <p class="text-lg lg:text-xl text-gray-400 max-w-2xl mb-12 leading-relaxed">
-            โครงสร้างพื้นฐานระบบคลาวด์ที่เสถียร ปลอดภัย และพร้อมรองรับการเติบโตของธุรกิจคุณ
+          <p class="text-lg lg:text-xl text-gray-400 mt-6 max-w-xl leading-relaxed">
+            บริการ Cloud Server, Web Hosting และ IT Solutions ครบวงจร พร้อมทีมซัพพอร์ตดูแลตลอด 24 ชั่วโมง
           </p>
-          <div class="flex flex-wrap gap-4">
-            <NuxtLink to="/contact" class="btn-primary text-base">เริ่มต้นใช้งาน</NuxtLink>
-            <NuxtLink to="/services" class="btn-secondary text-base">ดูบริการทั้งหมด</NuxtLink>
+
+          <div class="flex flex-wrap gap-4 mt-10">
+            <NuxtLink to="/contact"
+              class="px-8 py-3.5 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/20">
+              เริ่มต้นใช้งาน
+            </NuxtLink>
+            <NuxtLink to="/services"
+              class="px-8 py-3.5 rounded-xl border border-white/[0.12] text-white font-semibold hover:bg-white/[0.05] transition-all">
+              ดูบริการทั้งหมด
+            </NuxtLink>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="flex flex-wrap gap-6 mt-14">
+            <div v-for="badge in badges" :key="badge.label" class="flex items-center gap-2.5 text-sm text-gray-400">
+              <div class="w-9 h-9 rounded-lg bg-sky-500/10 flex items-center justify-center">
+                <Icon :name="badge.icon" class="w-4.5 h-4.5 text-sky-400" />
+              </div>
+              {{ badge.label }}
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Stats -->
-    <section class="section-padding border-t border-white/[0.06]">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <section class="section-padding border-y border-white/[0.06]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
           <div v-for="stat in stats" :key="stat.label" class="text-center">
-            <div class="text-3xl lg:text-5xl font-bold text-white mb-2">{{ stat.value }}</div>
-            <div class="text-sm text-gray-500">{{ stat.label }}</div>
+            <div class="text-4xl lg:text-5xl font-bold text-white">{{ stat.value }}</div>
+            <div class="text-gray-500 mt-2">{{ stat.label }}</div>
           </div>
         </div>
       </div>
@@ -37,58 +54,77 @@
 
     <!-- Services -->
     <section class="section-padding">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="max-w-2xl mb-16">
-          <h2 class="heading-lg mb-4">บริการของเรา</h2>
-          <p class="text-muted text-lg">โซลูชันครบวงจรสำหรับโครงสร้างพื้นฐานดิจิทัลของธุรกิจ</p>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="section-title">บริการของเรา</h2>
+          <p class="section-subtitle">โซลูชันครบวงจรสำหรับทุกธุรกิจ</p>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="service in services" :key="service.title" class="glass-card-hover p-8">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div v-for="service in services" :key="service.title" class="glass-card-hover p-6 group">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-colors">
               <Icon :name="service.icon" class="w-6 h-6 text-sky-400" />
             </div>
-            <h3 class="text-lg font-semibold text-white mb-3">{{ service.title }}</h3>
-            <p class="text-sm text-gray-400 leading-relaxed">{{ service.desc }}</p>
+            <h3 class="text-white font-semibold text-lg mb-2">{{ service.title }}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">{{ service.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section-padding border-y border-white/[0.06]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="section-title">ทำไมต้องเลือกเรา</h2>
+          <p class="section-subtitle">สิ่งที่ทำให้เราแตกต่างจากผู้ให้บริการรายอื่น</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div v-for="feature in features" :key="feature.title" class="glass-card p-8 text-center">
+            <div class="w-16 h-16 rounded-2xl bg-sky-500/10 flex items-center justify-center mx-auto mb-6">
+              <Icon :name="feature.icon" class="w-8 h-8 text-sky-400" />
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-3">{{ feature.title }}</h3>
+            <p class="text-gray-500 leading-relaxed">{{ feature.desc }}</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Domain Pricing -->
-    <section class="section-padding border-t border-white/[0.06]">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <h2 class="heading-lg mb-4">จดโดเมน</h2>
-          <p class="text-muted text-lg">เริ่มต้นธุรกิจออนไลน์ด้วยชื่อโดเมนที่เหมาะกับคุณ</p>
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="section-title">จดโดเมนกับเรา</h2>
+          <p class="section-subtitle">ราคาเริ่มต้นที่คุณจับต้องได้</p>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="domain in domains" :key="domain.ext" class="glass-card-hover p-8 text-center">
-            <div class="text-2xl font-bold text-white mb-2">{{ domain.ext }}</div>
-            <div class="text-3xl font-bold text-sky-400 mb-1">{{ domain.price }}<span class="text-lg text-gray-500">฿</span></div>
-            <div class="text-sm text-gray-500">/ปี</div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div v-for="domain in domains" :key="domain.ext" class="glass-card-hover p-6 text-center">
+            <div class="text-2xl font-bold text-sky-400 mb-2">{{ domain.ext }}</div>
+            <div class="text-white">
+              <span class="text-3xl font-bold">{{ domain.price }}</span>
+              <span class="text-gray-500 text-sm"> บาท/ปี</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="section-padding">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <h2 class="heading-lg mb-4">ลูกค้าของเรา</h2>
-          <p class="text-muted text-lg">เสียงจากผู้ใช้งานจริง</p>
+    <section class="section-padding border-y border-white/[0.06]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="section-title">ลูกค้าพูดถึงเรา</h2>
+          <p class="section-subtitle">ความไว้วางใจจากลูกค้ากว่า 500 ราย</p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div v-for="t in testimonials" :key="t.name" class="glass-card p-8">
-            <p class="text-gray-300 mb-6 leading-relaxed">"{{ t.quote }}"</p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-sky-500/20 flex items-center justify-center">
-                <span class="text-sky-400 font-semibold text-sm">{{ t.name[0] }}</span>
-              </div>
-              <div>
-                <div class="text-sm font-medium text-white">{{ t.name }}</div>
-                <div class="text-xs text-gray-500">{{ t.role }}</div>
-              </div>
+            <div class="flex gap-1 mb-4">
+              <Icon v-for="i in 5" :key="i" name="lucide:star" class="w-4 h-4 text-yellow-400 fill-yellow-400" />
+            </div>
+            <p class="text-gray-300 leading-relaxed mb-6">"{{ t.quote }}"</p>
+            <div>
+              <div class="text-white font-semibold">{{ t.name }}</div>
+              <div class="text-gray-500 text-sm">{{ t.role }}</div>
             </div>
           </div>
         </div>
@@ -97,13 +133,23 @@
 
     <!-- CTA -->
     <section class="section-padding">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="glass-card p-12 lg:p-20 text-center relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-sky-500/[0.05] rounded-full blur-[100px]" />
-          <div class="relative">
-            <h2 class="heading-lg mb-6">พร้อมเริ่มต้นหรือยัง?</h2>
-            <p class="text-muted text-lg max-w-xl mx-auto mb-10">ปรึกษาผู้เชี่ยวชาญของเราวันนี้ เพื่อวางแผนโครงสร้างพื้นฐานที่เหมาะกับธุรกิจของคุณ</p>
-            <NuxtLink to="/contact" class="btn-primary text-base">ติดต่อเรา</NuxtLink>
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="glass-card p-12 lg:p-16 text-center relative overflow-hidden">
+          <div class="gradient-orb w-[300px] h-[300px] bg-sky-500 -top-20 -right-20"></div>
+          <div class="gradient-orb w-[200px] h-[200px] bg-sky-600 -bottom-10 -left-10 opacity-10"></div>
+          <div class="relative z-10">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">พร้อมเริ่มต้นหรือยัง?</h2>
+            <p class="text-gray-400 text-lg mb-8 max-w-lg mx-auto">เริ่มต้นใช้งาน Cloud Infrastructure ที่เสถียรและเร็วที่สุดวันนี้</p>
+            <div class="flex flex-wrap justify-center gap-4">
+              <NuxtLink to="/contact"
+                class="px-8 py-3.5 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/20">
+                เริ่มต้นเลย
+              </NuxtLink>
+              <NuxtLink to="/services"
+                class="px-8 py-3.5 rounded-xl border border-white/[0.12] text-white font-semibold hover:bg-white/[0.05] transition-all">
+                ดูแพ็คเกจ
+              </NuxtLink>
+            </div>
           </div>
         </div>
       </div>
@@ -112,27 +158,36 @@
 </template>
 
 <script setup>
-useSeoMeta({
-  title: 'OneSiamSoft — Cloud Infrastructure ที่ธุรกิจไว้วางใจ',
-  description: 'โครงสร้างพื้นฐานระบบคลาวด์ที่เสถียร ปลอดภัย พร้อมรองรับการเติบโตของธุรกิจคุณ',
-})
+useSeoMeta({ title: 'OneSiamSoft - Cloud Infrastructure ที่ธุรกิจไว้วางใจ', description: 'บริการ Cloud Server, Web Hosting และ IT Solutions ครบวงจร' })
+
+const badges = [
+  { icon: 'lucide:shield-check', label: 'SSL Free' },
+  { icon: 'lucide:headphones', label: '24/7 Support' },
+  { icon: 'lucide:database', label: 'Auto Backup' },
+]
 
 const stats = [
-  { value: '99.9%', label: 'Uptime SLA' },
-  { value: '500+', label: 'ลูกค้าไว้วางใจ' },
-  { value: '24/7', label: 'ทีมซัพพอร์ต' },
+  { value: '99.9%', label: 'Uptime' },
+  { value: '500+', label: 'ลูกค้า' },
+  { value: '24/7', label: 'ซัพพอร์ต' },
   { value: '10+', label: 'ปีประสบการณ์' },
 ]
 
 const services = [
-  { icon: 'lucide:cloud', title: 'Cloud Server', desc: 'เซิร์ฟเวอร์คลาวด์ประสิทธิภาพสูง SSD NVMe รองรับ Auto-scaling' },
-  { icon: 'lucide:globe', title: 'Web Hosting', desc: 'เว็บโฮสติ้งที่เสถียรและรวดเร็ว รองรับ PHP, Node.js, Python' },
-  { icon: 'lucide:at-sign', title: 'Domain', desc: 'จดโดเมนทุกนามสกุล .com .in.th .co.th ราคาเริ่มต้น 400 บาท' },
-  { icon: 'lucide:server', title: 'Dedicated Server', desc: 'เซิร์ฟเวอร์ส่วนตัวสำหรับองค์กรที่ต้องการประสิทธิภาพสูงสุด' },
-  { icon: 'lucide:mail', title: 'Business Email', desc: 'อีเมลธุรกิจ @yourdomain.com เพิ่มความน่าเชื่อถือให้แบรนด์' },
-  { icon: 'lucide:layout-template', title: 'WordPress Hosting', desc: 'โฮสติ้งที่ปรับแต่งมาสำหรับ WordPress โดยเฉพาะ เร็ว ปลอดภัย' },
-  { icon: 'lucide:settings', title: 'Custom Server', desc: 'ออกแบบเซิร์ฟเวอร์ตามสเปคที่ต้องการ ปรับแต่งได้ทุกรายละเอียด' },
-  { icon: 'lucide:code', title: 'Custom Solutions', desc: 'ออกแบบและพัฒนาระบบตามความต้องการเฉพาะของธุรกิจ' },
+  { icon: 'lucide:cloud', title: 'Cloud Server', desc: 'เซิร์ฟเวอร์บนคลาวด์ประสิทธิภาพสูง รองรับทุกการใช้งาน' },
+  { icon: 'lucide:globe', title: 'Web Hosting', desc: 'เว็บโฮสติ้งเร็ว เสถียร พร้อม cPanel จัดการง่าย' },
+  { icon: 'lucide:at-sign', title: 'Domain', desc: 'จดโดเมนทุกนามสกุล ราคาเริ่มต้นเพียง 400 บาท' },
+  { icon: 'lucide:server', title: 'Dedicated Server', desc: 'เซิร์ฟเวอร์ส่วนตัวสำหรับธุรกิจที่ต้องการพลังสูงสุด' },
+  { icon: 'lucide:mail', title: 'Business Email', desc: 'อีเมลธุรกิจมืออาชีพ @yourdomain.com' },
+  { icon: 'lucide:file-code', title: 'WordPress Hosting', desc: 'โฮสติ้งออกแบบมาเพื่อ WordPress โดยเฉพาะ' },
+  { icon: 'lucide:settings', title: 'Custom Server', desc: 'ออกแบบเซิร์ฟเวอร์ตามสเปคที่คุณต้องการ' },
+  { icon: 'lucide:lightbulb', title: 'Custom Solutions', desc: 'โซลูชัน IT ที่ปรับแต่งให้ตรงกับธุรกิจของคุณ' },
+]
+
+const features = [
+  { icon: 'lucide:zap', title: 'ความเร็วสูง', desc: 'เซิร์ฟเวอร์ติดตั้งที่ Data Center ระดับ Tier 3 รองรับ NVMe SSD เร็วกว่าปกติ 10 เท่า' },
+  { icon: 'lucide:shield', title: 'ปลอดภัยสูงสุด', desc: 'ระบบ Firewall, DDoS Protection และ SSL Certificate ฟรีทุกแพ็คเกจ' },
+  { icon: 'lucide:headphones', title: 'ซัพพอร์ต 24/7', desc: 'ทีมงานพร้อมดูแลและแก้ไขปัญหาให้คุณตลอด 24 ชั่วโมง ทุกวัน' },
 ]
 
 const domains = [
@@ -143,8 +198,8 @@ const domains = [
 ]
 
 const testimonials = [
-  { name: 'สมชาย วงศ์ดี', role: 'CEO, TechStartup', quote: 'ระบบเสถียรมาก ใช้มา 3 ปี ไม่เคยมีปัญหาเรื่อง downtime เลย' },
-  { name: 'วิภา สุขใจ', role: 'CTO, E-Commerce Co.', quote: 'ทีมซัพพอร์ตตอบเร็วมาก แก้ปัญหาให้ทันที ประทับใจบริการ' },
-  { name: 'ธนา รุ่งเรือง', role: 'Founder, Digital Agency', quote: 'Cloud Server ของ OneSiamSoft เร็วกว่าที่เคยใช้มาก ราคาก็สมเหตุสมผล' },
+  { quote: 'ใช้บริการมากว่า 3 ปี เซิร์ฟเวอร์เสถียร ไม่เคยมีปัญหา ทีมซัพพอร์ตตอบไว', name: 'คุณสมชาย', role: 'เจ้าของร้านค้าออนไลน์' },
+  { quote: 'ย้ายมาจากที่อื่น เว็บเร็วขึ้นเห็นได้ชัด ราคาคุ้มค่ามาก แนะนำเลย', name: 'คุณวิภา', role: 'ผู้จัดการ IT, บริษัทขนส่ง' },
+  { quote: 'ระบบ Auto Backup ช่วยได้มากเลย ไม่ต้องกังวลเรื่องข้อมูลหาย บริการดีมาก', name: 'คุณณัฐพล', role: 'Web Developer' },
 ]
 </script>

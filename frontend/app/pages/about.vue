@@ -1,72 +1,29 @@
 <template>
   <div>
     <!-- Hero -->
-    <section class="pt-32 pb-20">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="max-w-3xl">
-          <p class="text-sm text-sky-400 font-medium tracking-wide uppercase mb-4">About Us</p>
-          <h1 class="heading-xl mb-6">เกี่ยวกับ<span class="accent">เรา</span></h1>
-          <p class="text-lg text-gray-400 leading-relaxed">บริษัท วัน สยามซอฟท์ จำกัด ผู้ให้บริการโครงสร้างพื้นฐานคลาวด์และโซลูชันซอฟต์แวร์สำหรับธุรกิจไทย</p>
-        </div>
+    <section class="pt-32 pb-16 relative overflow-hidden">
+      <div class="gradient-orb w-[500px] h-[500px] bg-sky-500 -top-40 -left-40"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <h1 class="text-4xl lg:text-6xl font-bold text-white tracking-tight">เกี่ยวกับเรา</h1>
+        <p class="section-subtitle mt-4">เรื่องราวของ OneSiamSoft</p>
       </div>
     </section>
 
     <!-- Story -->
-    <section class="py-20 border-t border-white/[0.06]">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-16">
-          <div>
-            <h2 class="heading-md mb-6">เรื่องราวของเรา</h2>
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="w-full lg:w-1/2">
+            <div class="glass-card overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop"
+                alt="Team" class="w-full h-80 object-cover" />
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2">
+            <h2 class="text-3xl font-bold text-white mb-6">บริษัท วัน สยามซอฟท์ จำกัด</h2>
             <div class="space-y-4 text-gray-400 leading-relaxed">
-              <p>OneSiamSoft ก่อตั้งขึ้นด้วยวิสัยทัศน์ที่จะทำให้เทคโนโลยีคลาวด์เข้าถึงได้สำหรับทุกธุรกิจในประเทศไทย ไม่ว่าจะเป็นสตาร์ทอัพหรือองค์กรขนาดใหญ่</p>
-              <p>ด้วยประสบการณ์กว่า 10 ปีในอุตสาหกรรม IT เราเข้าใจความต้องการของธุรกิจไทยอย่างลึกซึ้ง และมุ่งมั่นพัฒนาบริการที่ตอบโจทย์ทุกความต้องการ</p>
-              <p>ทีมงานของเราประกอบด้วยผู้เชี่ยวชาญที่มีความรู้ความสามารถในด้าน Cloud Computing, DevOps, Cybersecurity และ Software Development</p>
-            </div>
-          </div>
-          <div class="glass-card p-8">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Team" class="rounded-xl w-full h-full object-cover" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Company Info -->
-    <section class="py-20 border-t border-white/[0.06]">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="glass-card p-8 lg:p-12">
-          <h2 class="heading-md mb-8">ข้อมูลบริษัท</h2>
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="space-y-4">
-              <div class="flex items-start gap-3">
-                <Icon name="lucide:building-2" class="w-5 h-5 text-sky-400 mt-0.5 shrink-0" />
-                <div>
-                  <div class="text-sm text-gray-500">ชื่อบริษัท</div>
-                  <div class="text-white">บริษัท วัน สยามซอฟท์ จำกัด (สำนักงานใหญ่)</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <Icon name="lucide:map-pin" class="w-5 h-5 text-sky-400 mt-0.5 shrink-0" />
-                <div>
-                  <div class="text-sm text-gray-500">ที่อยู่</div>
-                  <div class="text-white">28/99 ซอยหมู่บ้านบ่อฝ้าย ต.หัวหิน อ.หัวหิน จ.ประจวบคีรีขันธ์ 77110</div>
-                </div>
-              </div>
-            </div>
-            <div class="space-y-4">
-              <div class="flex items-start gap-3">
-                <Icon name="lucide:mail" class="w-5 h-5 text-sky-400 mt-0.5 shrink-0" />
-                <div>
-                  <div class="text-sm text-gray-500">อีเมล</div>
-                  <div class="text-white">support@onesiamsoft.com</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <Icon name="lucide:globe" class="w-5 h-5 text-sky-400 mt-0.5 shrink-0" />
-                <div>
-                  <div class="text-sm text-gray-500">เว็บไซต์</div>
-                  <div class="text-white">www.onesiamsoft.com</div>
-                </div>
-              </div>
+              <p>OneSiamSoft ก่อตั้งขึ้นด้วยความมุ่งมั่นในการให้บริการ Cloud Infrastructure และ IT Solutions ที่มีคุณภาพ เชื่อถือได้ และราคาเข้าถึงได้สำหรับธุรกิจทุกขนาดในประเทศไทย</p>
+              <p>ด้วยประสบการณ์กว่า 10 ปีในวงการ IT เราได้ดูแลลูกค้ากว่า 500 รายทั่วประเทศ ตั้งแต่ธุรกิจขนาดเล็กจนถึงองค์กรขนาดใหญ่ โดยทีมงานผู้เชี่ยวชาญที่พร้อมให้บริการ 24 ชั่วโมง</p>
             </div>
           </div>
         </div>
@@ -74,16 +31,55 @@
     </section>
 
     <!-- Values -->
-    <section class="section-padding border-t border-white/[0.06]">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 class="heading-lg mb-16 text-center">ค่านิยมของเรา</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div v-for="v in values" :key="v.title" class="glass-card p-8">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-6">
-              <Icon :name="v.icon" class="w-6 h-6 text-sky-400" />
+    <section class="section-padding border-y border-white/[0.06]">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title text-center mb-16">คุณค่าหลักของเรา</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div v-for="v in values" :key="v.title" class="glass-card p-8 text-center">
+            <div class="w-14 h-14 rounded-2xl bg-sky-500/10 flex items-center justify-center mx-auto mb-5">
+              <Icon :name="v.icon" class="w-7 h-7 text-sky-400" />
             </div>
-            <h3 class="text-lg font-semibold text-white mb-3">{{ v.title }}</h3>
-            <p class="text-sm text-gray-400 leading-relaxed">{{ v.desc }}</p>
+            <h3 class="text-xl font-semibold text-white mb-3">{{ v.title }}</h3>
+            <p class="text-gray-500 leading-relaxed">{{ v.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div v-for="stat in stats" :key="stat.label" class="text-center">
+            <div class="text-4xl font-bold text-white">{{ stat.value }}</div>
+            <div class="text-gray-500 mt-2">{{ stat.label }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Info -->
+    <section class="pb-24 lg:pb-32">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="glass-card p-8 lg:p-10">
+          <h3 class="text-xl font-semibold text-white mb-6">ข้อมูลบริษัท</h3>
+          <div class="space-y-4 text-gray-400">
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:building-2" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+              <span>บริษัท วัน สยามซอฟท์ จำกัด</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:map-pin" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+              <span>28/99 ซอยหมู่บ้านบ่อฝ้าย ต.หัวหิน อ.หัวหิน จ.ประจวบคีรีขันธ์ 77110</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:mail" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+              <span>support@onesiamsoft.com</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon name="lucide:clock" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+              <span>เปิดให้บริการ 24 ชั่วโมง ทุกวัน</span>
+            </div>
           </div>
         </div>
       </div>
@@ -92,17 +88,18 @@
 </template>
 
 <script setup>
-useSeoMeta({
-  title: 'เกี่ยวกับเรา — OneSiamSoft',
-  description: 'บริษัท วัน สยามซอฟท์ จำกัด ผู้ให้บริการ Cloud Infrastructure สำหรับธุรกิจไทย',
-})
+useSeoMeta({ title: 'เกี่ยวกับเรา - OneSiamSoft', description: 'เรื่องราวและคุณค่าหลักของ OneSiamSoft' })
 
 const values = [
-  { icon: 'lucide:shield-check', title: 'ความน่าเชื่อถือ', desc: 'ระบบ Uptime 99.9% พร้อมทีมดูแลตลอด 24 ชั่วโมง เพราะธุรกิจของคุณหยุดไม่ได้' },
-  { icon: 'lucide:zap', title: 'ประสิทธิภาพสูง', desc: 'ใช้เทคโนโลยีล่าสุด SSD NVMe และ Infrastructure ระดับ Enterprise' },
-  { icon: 'lucide:heart-handshake', title: 'ใส่ใจลูกค้า', desc: 'ทีมซัพพอร์ตคนไทย พร้อมช่วยเหลือทุกปัญหา ตอบเร็ว แก้ไขทันที' },
-  { icon: 'lucide:lock', title: 'ความปลอดภัย', desc: 'ระบบป้องกัน DDoS, Firewall ระดับสูง และ Backup อัตโนมัติทุกวัน' },
-  { icon: 'lucide:trending-up', title: 'รองรับการเติบโต', desc: 'ปรับขนาดทรัพยากรได้ตามความต้องการ Auto-scaling ไม่มีสะดุด' },
-  { icon: 'lucide:lightbulb', title: 'นวัตกรรม', desc: 'ติดตามเทรนด์เทคโนโลยีใหม่ๆ อยู่เสมอ เพื่อนำเสนอสิ่งที่ดีที่สุดให้ลูกค้า' },
+  { icon: 'lucide:heart', title: 'ใส่ใจลูกค้า', desc: 'เราให้ความสำคัญกับทุกความต้องการของลูกค้า และพร้อมช่วยเหลือเสมอ' },
+  { icon: 'lucide:target', title: 'มุ่งมั่นคุณภาพ', desc: 'ทุกบริการผ่านมาตรฐานสูงสุด เพื่อให้ลูกค้าได้รับสิ่งที่ดีที่สุด' },
+  { icon: 'lucide:trending-up', title: 'พัฒนาไม่หยุด', desc: 'เราอัพเดตเทคโนโลยีอยู่เสมอ เพื่อให้ลูกค้าได้ใช้สิ่งที่ดีที่สุด' },
+]
+
+const stats = [
+  { value: '10+', label: 'ปีประสบการณ์' },
+  { value: '500+', label: 'ลูกค้าที่ไว้วางใจ' },
+  { value: '99.9%', label: 'Uptime' },
+  { value: '24/7', label: 'ซัพพอร์ต' },
 ]
 </script>
