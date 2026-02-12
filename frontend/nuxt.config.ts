@@ -5,26 +5,37 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/seo',
+    '@nuxt/icon',
+    '@nuxtjs/google-fonts',
   ],
+  icon: {
+    serverBundle: 'remote',
+  },
+  googleFonts: {
+    families: {
+      'Inter': [300, 400, 500, 600, 700, 800, 900],
+      'Noto Sans Thai': [300, 400, 500, 600, 700],
+    },
+    display: 'swap',
+    preconnect: true,
+  },
   app: {
     head: {
       htmlAttrs: { lang: 'th' },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'OneSiamSoft - บริการ Cloud Server Hosting ที่รวดเร็วและปลอดภัย',
+      title: 'OneSiamSoft - Enterprise Cloud Infrastructure & Hosting Solutions',
       meta: [
-        { name: 'description', content: 'OneSiamSoft ผู้ให้บริการ Cloud Server, Web Hosting, Domain, Dedicated Server และ Custom Solution สำหรับธุรกิจของคุณ' },
-        { name: 'keywords', content: 'cloud server, hosting, domain, dedicated server, web hosting, thailand, โฮสติ้ง, เว็บโฮสติ้ง, คลาวด์เซิร์ฟเวอร์' },
-        { property: 'og:title', content: 'OneSiamSoft - Cloud Server Hosting' },
-        { property: 'og:description', content: 'บริการ Cloud Server Hosting ที่รวดเร็วและปลอดภัยสำหรับธุรกิจของคุณ' },
+        { name: 'description', content: 'OneSiamSoft — ผู้ให้บริการ Cloud Infrastructure, Managed Hosting, Domain Registration และ Enterprise Solutions ชั้นนำของประเทศไทย ด้วยมาตรฐาน Enterprise-Grade' },
+        { name: 'keywords', content: 'cloud server thailand, enterprise hosting, managed cloud, dedicated server, web hosting, domain registration, IT infrastructure, โฮสติ้ง, คลาวด์เซิร์ฟเวอร์, เว็บโฮสติ้ง' },
+        { property: 'og:title', content: 'OneSiamSoft — Enterprise Cloud Infrastructure' },
+        { property: 'og:description', content: 'Trusted cloud infrastructure and hosting solutions for businesses in Thailand' },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://onesiamsoft.com' },
+        { property: 'og:image', content: 'https://onesiamsoft.com/og-image.png' },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap' },
       ],
     },
   },

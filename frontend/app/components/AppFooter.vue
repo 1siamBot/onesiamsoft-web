@@ -1,60 +1,131 @@
 <template>
-  <footer class="bg-gray-900 text-gray-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- Company -->
-        <div>
-          <div class="flex items-center space-x-2 mb-4">
-            <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold">O</span>
+  <footer class="bg-slate-950 text-gray-400">
+    <!-- Main Footer -->
+    <div class="section-container py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+        <!-- Brand -->
+        <div class="lg:col-span-4">
+          <div class="flex items-center gap-2.5 mb-5">
+            <div class="relative w-8 h-8">
+              <div class="absolute inset-0 bg-primary-500 rounded-lg"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="text-white font-bold text-xs">OS</span>
+              </div>
             </div>
             <span class="text-lg font-bold text-white">OneSiam<span class="text-primary-400">Soft</span></span>
           </div>
-          <p class="text-sm leading-relaxed">
-            ผู้ให้บริการ Cloud Server Hosting ที่รวดเร็วและปลอดภัย เพื่อขับเคลื่อนธุรกิจของคุณสู่อนาคต
+          <p class="text-sm leading-relaxed mb-6 max-w-sm">
+            ผู้ให้บริการ Cloud Infrastructure และ Managed Hosting ชั้นนำของประเทศไทย 
+            ด้วยมาตรฐาน Enterprise-Grade เพื่อขับเคลื่อนธุรกิจดิจิทัลของคุณ
           </p>
+          <div class="flex items-center gap-3">
+            <a v-for="social in socials" :key="social.icon" :href="social.url" target="_blank"
+              class="w-9 h-9 rounded-lg bg-white/5 hover:bg-primary-600 flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5">
+              <Icon :name="social.icon" class="w-4 h-4 text-gray-400 group-hover:text-white" />
+            </a>
+          </div>
         </div>
 
         <!-- Services -->
-        <div>
-          <h3 class="text-white font-semibold mb-4">บริการ</h3>
-          <ul class="space-y-2 text-sm">
-            <li><NuxtLink to="/services" class="hover:text-white transition">Cloud Server</NuxtLink></li>
-            <li><NuxtLink to="/services" class="hover:text-white transition">Web Hosting</NuxtLink></li>
-            <li><NuxtLink to="/services" class="hover:text-white transition">Domain</NuxtLink></li>
-            <li><NuxtLink to="/services" class="hover:text-white transition">Dedicated Server</NuxtLink></li>
-          </ul>
-        </div>
-
-        <!-- Company Links -->
-        <div>
-          <h3 class="text-white font-semibold mb-4">บริษัท</h3>
-          <ul class="space-y-2 text-sm">
-            <li><NuxtLink to="/about" class="hover:text-white transition">เกี่ยวกับเรา</NuxtLink></li>
-            <li><NuxtLink to="/blog" class="hover:text-white transition">บทความ</NuxtLink></li>
-            <li><NuxtLink to="/contact" class="hover:text-white transition">ติดต่อเรา</NuxtLink></li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div>
-          <h3 class="text-white font-semibold mb-4">ติดต่อ</h3>
-          <ul class="space-y-2 text-sm">
-            <li class="flex items-center space-x-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              <span>info@onesiamsoft.com</span>
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">บริการ</h4>
+          <ul class="space-y-3">
+            <li v-for="link in serviceLinks" :key="link.label">
+              <NuxtLink :to="link.to" class="text-sm hover:text-white transition-colors duration-200 flex items-center gap-1.5">
+                <span class="w-1 h-1 rounded-full bg-primary-500"></span>
+                {{ link.label }}
+              </NuxtLink>
             </li>
-            <li class="flex items-center space-x-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">บริษัท</h4>
+          <ul class="space-y-3">
+            <li v-for="link in companyLinks" :key="link.label">
+              <NuxtLink :to="link.to" class="text-sm hover:text-white transition-colors duration-200 flex items-center gap-1.5">
+                <span class="w-1 h-1 rounded-full bg-primary-500"></span>
+                {{ link.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact & Trust -->
+        <div class="lg:col-span-4">
+          <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">ติดต่อเรา</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3">
+              <Icon name="lucide:mail" class="w-4 h-4 mt-0.5 text-primary-400 flex-shrink-0" />
+              <div>
+                <div>info@onesiamsoft.com</div>
+                <div>support@onesiamsoft.com</div>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="lucide:phone" class="w-4 h-4 mt-0.5 text-primary-400 flex-shrink-0" />
+              <span>02-xxx-xxxx</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="lucide:map-pin" class="w-4 h-4 mt-0.5 text-primary-400 flex-shrink-0" />
               <span>กรุงเทพมหานคร, ประเทศไทย</span>
             </li>
           </ul>
+
+          <!-- Trust Badges -->
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <div class="badge bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20">
+              <Icon name="lucide:shield-check" class="w-3.5 h-3.5" />
+              SSL Secured
+            </div>
+            <div class="badge bg-blue-500/10 text-blue-400 ring-1 ring-blue-500/20">
+              <Icon name="lucide:server" class="w-3.5 h-3.5" />
+              99.9% Uptime
+            </div>
+            <div class="badge bg-amber-500/10 text-amber-400 ring-1 ring-amber-500/20">
+              <Icon name="lucide:headphones" class="w-3.5 h-3.5" />
+              24/7 Support
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-        <p>&copy; {{ new Date().getFullYear() }} OneSiamSoft. สงวนลิขสิทธิ์ทุกประการ</p>
+    <!-- Bottom Bar -->
+    <div class="border-t border-white/5">
+      <div class="section-container py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-xs">© {{ new Date().getFullYear() }} OneSiamSoft Co., Ltd. สงวนลิขสิทธิ์ทุกประการ</p>
+        <div class="flex items-center gap-4 text-xs">
+          <NuxtLink to="/privacy" class="hover:text-white transition">Privacy Policy</NuxtLink>
+          <NuxtLink to="/terms" class="hover:text-white transition">Terms of Service</NuxtLink>
+          <NuxtLink to="/sla" class="hover:text-white transition">SLA</NuxtLink>
+        </div>
       </div>
     </div>
   </footer>
 </template>
+
+<script setup>
+const socials = [
+  { icon: 'lucide:facebook', url: '#' },
+  { icon: 'lucide:twitter', url: '#' },
+  { icon: 'lucide:linkedin', url: '#' },
+  { icon: 'lucide:github', url: '#' },
+]
+
+const serviceLinks = [
+  { label: 'Cloud Server', to: '/services' },
+  { label: 'Web Hosting', to: '/services' },
+  { label: 'Domain Registration', to: '/services' },
+  { label: 'Dedicated Server', to: '/services' },
+  { label: 'Custom Solutions', to: '/services' },
+]
+
+const companyLinks = [
+  { label: 'เกี่ยวกับเรา', to: '/about' },
+  { label: 'บทความ', to: '/blog' },
+  { label: 'ติดต่อเรา', to: '/contact' },
+  { label: 'SLA Agreement', to: '/sla' },
+]
+</script>
