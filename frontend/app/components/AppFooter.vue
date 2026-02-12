@@ -64,7 +64,7 @@
             </li>
             <li class="flex items-start gap-3">
               <Icon name="lucide:map-pin" class="w-4 h-4 mt-0.5 text-primary-400 flex-shrink-0" />
-              <span>กรุงเทพมหานคร, ประเทศไทย</span>
+              <span>28/99 ซอยหมู่บ้านบ่อฝ้าย ต.หัวหิน อ.หัวหิน จ.ประจวบคีรีขันธ์ 77110</span>
             </li>
           </ul>
 
@@ -90,7 +90,7 @@
     <!-- Bottom Bar -->
     <div class="border-t border-white/5">
       <div class="section-container py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p class="text-xs">© {{ new Date().getFullYear() }} OneSiamSoft Co., Ltd. สงวนลิขสิทธิ์ทุกประการ</p>
+        <p class="text-xs">© {{ new Date().getFullYear() }} บริษัท วัน สยามซอฟท์ จำกัด สงวนลิขสิทธิ์ทุกประการ</p>
         <div class="flex items-center gap-4 text-xs">
           <NuxtLink to="/privacy" class="hover:text-white transition">Privacy Policy</NuxtLink>
           <NuxtLink to="/terms" class="hover:text-white transition">Terms of Service</NuxtLink>
