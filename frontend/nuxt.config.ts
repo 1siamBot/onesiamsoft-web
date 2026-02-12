@@ -21,7 +21,8 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      htmlAttrs: { lang: 'th' },
+      htmlAttrs: { lang: 'th', class: 'dark' },
+      bodyAttrs: { class: 'bg-[#0c1222] text-gray-400' },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: 'OneSiamSoft - Enterprise Cloud Infrastructure & Hosting Solutions',
