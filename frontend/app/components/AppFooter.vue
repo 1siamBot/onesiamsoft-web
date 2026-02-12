@@ -53,8 +53,23 @@
         </div>
       </div>
 
-      <div class="mt-12 pt-8 border-t border-white/[0.06] text-center text-sm text-gray-600">
-        © {{ new Date().getFullYear() }} OneSiamSoft. All rights reserved.
+      <!-- Divider -->
+      <hr class="section-divider mt-12 mb-8" />
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-600">
+          © {{ new Date().getFullYear() }} OneSiamSoft. All rights reserved.
+        </p>
+        <!-- Back to top -->
+        <button
+          @click="scrollToTop"
+          class="flex items-center gap-2 text-sm text-gray-500 hover:text-sky-400 transition-colors group"
+        >
+          กลับด้านบน
+          <span class="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center group-hover:bg-sky-500/10 group-hover:border-sky-500/20 transition-all">
+            <Icon name="lucide:arrow-up" class="w-4 h-4" />
+          </span>
+        </button>
       </div>
     </div>
   </footer>
@@ -62,4 +77,8 @@
 
 <script setup>
 const services = ['Cloud Server', 'Web Hosting', 'Domain', 'Dedicated Server', 'Business Email', 'WordPress Hosting']
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
