@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-slate-950 min-h-screen">
+  <div class="bg-black min-h-screen">
     <!-- Hero -->
     <section class="relative pt-32 pb-20 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-slate-950 to-slate-900"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-black to-gray-950"></div>
       <div class="absolute top-0 left-1/3 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl"></div>
       <div class="section-container relative z-10 text-center">

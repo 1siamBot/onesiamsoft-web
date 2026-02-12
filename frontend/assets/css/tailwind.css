@@ -10,7 +10,7 @@
   }
   body {
     font-family: 'Inter', 'Noto Sans Thai', sans-serif;
-    @apply text-gray-900 bg-slate-950;
+    @apply text-gray-100 bg-black;
   }
   ::selection {
     @apply bg-primary-400/30 text-white;

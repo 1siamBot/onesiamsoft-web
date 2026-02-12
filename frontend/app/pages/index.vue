@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-slate-950 min-h-screen">
+  <div class="bg-black min-h-screen">
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center overflow-hidden">
       <!-- Animated background -->
       <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-slate-950 to-slate-900"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-black to-gray-950"></div>
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
         <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-3xl"></div>
@@ -87,7 +87,7 @@
                   alt="Data Center Server Room" 
                   class="w-full h-[400px] object-cover" 
                   loading="eager" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent rounded-3xl"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-3xl"></div>
               </div>
             </div>
           </div>
@@ -263,7 +263,7 @@
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=80" 
           alt="" class="w-full h-full object-cover opacity-20" loading="lazy" />
-        <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
       </div>
       <div class="section-container relative z-10 text-center">
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4 text-balance">
