@@ -1,22 +1,26 @@
 <template>
   <div>
-    <!-- Hero -->
-    <section class="pt-32 pb-16 relative overflow-hidden">
-      <div class="gradient-orb w-[500px] h-[500px] bg-sky-500 -top-40 -left-40"></div>
-      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-        <h1 v-scroll-animate class="text-4xl lg:text-6xl font-bold text-white tracking-tight">เกี่ยวกับเรา</h1>
-        <p v-scroll-animate="100" class="section-subtitle mt-4">เรื่องราวของ OneSiamSoft</p>
+    <!-- Hero with Image -->
+    <section class="relative pt-16">
+      <div class="absolute inset-0 h-[450px]">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=600&fit=crop&q=80"
+          alt="Team" class="img-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0c1222]/80 via-[#0c1222]/70 to-[#0c1222]"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 text-center">
+        <h1 class="text-4xl lg:text-6xl font-bold text-white tracking-tight">เกี่ยวกับเรา</h1>
+        <p class="section-subtitle mt-4">เรื่องราวของ OneSiamSoft</p>
       </div>
     </section>
 
     <!-- Story -->
     <section class="section-padding">
       <div class="max-w-7xl mx-auto px-6">
-        <div v-scroll-animate class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
           <div class="w-full lg:w-1/2">
-            <div class="glass-card overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop"
-                alt="Team" class="w-full h-80 object-cover" />
+            <div class="rounded-2xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&q=80"
+                alt="Office" class="w-full h-80 object-cover" />
             </div>
           </div>
           <div class="w-full lg:w-1/2">
@@ -33,69 +37,41 @@
     <!-- Timeline -->
     <section class="section-padding border-y border-white/[0.06]">
       <div class="max-w-4xl mx-auto px-6">
-        <h2 v-scroll-animate class="section-title text-center mb-16">เส้นทางของเรา</h2>
-        <div class="relative">
-          <!-- Line -->
-          <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-sky-500/30 via-sky-500/10 to-transparent" />
-
-          <div v-for="(milestone, i) in milestones" :key="milestone.year" v-scroll-animate="i * 100"
-            :class="['relative flex items-start gap-8 mb-12', i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse']">
-            <div class="hidden md:block w-1/2" :class="i % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'">
-              <div class="text-2xl font-bold text-sky-400">{{ milestone.year }}</div>
-              <h3 class="text-lg font-semibold text-white mt-1">{{ milestone.title }}</h3>
-              <p class="text-gray-500 text-sm mt-2">{{ milestone.desc }}</p>
+        <h2 class="section-title text-center mb-16">เส้นทางของเรา</h2>
+        <div class="space-y-12">
+          <div v-for="(event, i) in timeline" :key="event.year"
+            :class="['flex gap-6 items-start', i % 2 === 0 ? '' : '']">
+            <div class="shrink-0 w-20 text-right">
+              <div class="text-2xl font-bold text-sky-400">{{ event.year }}</div>
             </div>
-            <!-- Dot -->
-            <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-sky-400 border-4 border-[#0c1222] z-10" />
-            <!-- Mobile content -->
-            <div class="md:hidden pl-10">
-              <div class="text-2xl font-bold text-sky-400">{{ milestone.year }}</div>
-              <h3 class="text-lg font-semibold text-white mt-1">{{ milestone.title }}</h3>
-              <p class="text-gray-500 text-sm mt-2">{{ milestone.desc }}</p>
-            </div>
-            <div class="hidden md:block w-1/2" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Values -->
-    <section class="section-padding">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 v-scroll-animate class="section-title text-center mb-16">คุณค่าหลักของเรา</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="(v, i) in values" :key="v.title" v-scroll-animate="i * 120" class="glass-card p-8 text-center">
-            <div class="w-14 h-14 rounded-2xl bg-sky-500/10 flex items-center justify-center mx-auto mb-5">
-              <Icon :name="v.icon" class="w-7 h-7 text-sky-400" />
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">{{ v.title }}</h3>
-            <p class="text-gray-500 leading-relaxed">{{ v.desc }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Team Culture -->
-    <section class="section-padding border-y border-white/[0.06]">
-      <div class="max-w-7xl mx-auto px-6">
-        <div v-scroll-animate class="flex flex-col lg:flex-row gap-12 items-center">
-          <div class="w-full lg:w-1/2">
-            <h2 class="text-3xl font-bold text-white mb-6">วัฒนธรรมของเรา</h2>
-            <div class="space-y-4 text-gray-400 leading-relaxed">
-              <p>เราเชื่อว่าทีมที่ดีสร้างผลงานที่ดี ที่ OneSiamSoft เราส่งเสริมสภาพแวดล้อมที่ทุกคนสามารถเรียนรู้ เติบโต และสร้างสรรค์สิ่งใหม่ๆ ได้อย่างอิสระ</p>
-              <p>เราทำงานแบบ Remote-First เน้นผลลัพธ์มากกว่ากระบวนการ และเปิดกว้างสำหรับไอเดียจากทุกคนในทีม</p>
-            </div>
-            <div class="grid grid-cols-2 gap-4 mt-8">
-              <div v-for="culture in cultures" :key="culture" class="flex items-center gap-2 text-sm text-gray-400">
-                <Icon name="lucide:check-circle" class="w-4 h-4 text-sky-400 shrink-0" />
-                {{ culture }}
+            <div class="relative pb-12">
+              <div class="absolute top-3 -left-[5px] w-2.5 h-2.5 rounded-full bg-sky-400"></div>
+              <div class="absolute top-3 left-0 -bottom-4 w-px bg-white/[0.08]" v-if="i < timeline.length - 1"></div>
+              <div class="ml-6">
+                <h3 class="text-lg font-semibold text-white">{{ event.title }}</h3>
+                <p class="text-gray-400 text-sm mt-1">{{ event.desc }}</p>
               </div>
             </div>
           </div>
-          <div class="w-full lg:w-1/2">
-            <div class="glass-card overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=500&fit=crop"
-                alt="Culture" class="w-full h-80 object-cover" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Values with Images -->
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title text-center mb-16">คุณค่าหลักของเรา</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div v-for="v in values" :key="v.title" class="glass-card overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img :src="v.image" :alt="v.title" class="img-cover" loading="lazy" />
+            </div>
+            <div class="p-6 text-center">
+              <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mx-auto -mt-12 relative z-10">
+                <Icon :name="v.icon" class="w-6 h-6 text-sky-400" />
+              </div>
+              <h3 class="text-xl font-semibold text-white mt-4 mb-2">{{ v.title }}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">{{ v.desc }}</p>
             </div>
           </div>
         </div>
@@ -103,10 +79,10 @@
     </section>
 
     <!-- Stats -->
-    <section class="section-padding">
+    <section class="py-20 border-y border-white/[0.06]">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          <div v-for="(stat, i) in stats" :key="stat.label" v-scroll-animate="i * 100" class="text-center">
+          <div v-for="stat in stats" :key="stat.label" class="text-center">
             <div class="text-4xl font-bold text-white">{{ stat.value }}</div>
             <div class="text-gray-500 mt-2">{{ stat.label }}</div>
           </div>
@@ -115,14 +91,14 @@
     </section>
 
     <!-- Company Info -->
-    <section class="pb-24 lg:pb-32">
+    <section class="section-padding">
       <div class="max-w-3xl mx-auto px-6">
-        <div v-scroll-animate class="glass-card p-8 lg:p-10">
+        <div class="glass-card p-8 lg:p-10">
           <h3 class="text-xl font-semibold text-white mb-6">ข้อมูลบริษัท</h3>
           <div class="space-y-4 text-gray-400">
             <div class="flex items-start gap-3">
               <Icon name="lucide:building-2" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
-              <span>บริษัท วัน สยามซอฟท์ จำกัด</span>
+              <span>บริษัท วัน สยามซอฟท์ จำกัด (สำนักงานใหญ่)</span>
             </div>
             <div class="flex items-start gap-3">
               <Icon name="lucide:map-pin" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
@@ -144,34 +120,20 @@
 </template>
 
 <script setup>
-import { useScrollAnimation } from '~/composables/useScrollAnimation'
-
 useSeoMeta({ title: 'เกี่ยวกับเรา - OneSiamSoft', description: 'เรื่องราวและคุณค่าหลักของ OneSiamSoft' })
 
-const { vScrollAnimate } = useScrollAnimation()
-
-const milestones = [
-  { year: '2015', title: 'ก่อตั้งบริษัท', desc: 'เริ่มต้นจากทีมเล็กๆ ที่หลงใหลในเทคโนโลยี Cloud' },
-  { year: '2017', title: 'ลูกค้า 100 ราย', desc: 'ขยายบริการครอบคลุม Web Hosting, Domain และ Email' },
-  { year: '2019', title: 'เปิดตัว Cloud Server', desc: 'เปิดบริการ Cloud Server ด้วย Infrastructure ของตัวเอง' },
-  { year: '2022', title: 'ลูกค้า 300+ ราย', desc: 'ขยายทีมงานและเปิดบริการ Managed Service' },
-  { year: '2024', title: 'Enterprise Solutions', desc: 'เริ่มให้บริการ Custom Solutions สำหรับองค์กรขนาดใหญ่' },
-  { year: '2026', title: '500+ ลูกค้า', desc: 'ก้าวสู่ผู้นำด้าน Cloud Infrastructure ในประเทศไทย' },
+const timeline = [
+  { year: '2015', title: 'ก่อตั้งบริษัท', desc: 'เริ่มต้นให้บริการ Web Hosting และ Domain Registration' },
+  { year: '2017', title: 'เปิดบริการ Cloud Server', desc: 'ขยายบริการ Cloud Infrastructure รองรับธุรกิจขนาดกลาง' },
+  { year: '2019', title: 'ลูกค้า 200+ ราย', desc: 'เติบโตอย่างต่อเนื่อง เพิ่มทีม Support 24/7' },
+  { year: '2021', title: 'Dedicated Server & Custom Solutions', desc: 'เปิดบริการ Dedicated Server และรับทำระบบ IT ครบวงจร' },
+  { year: '2024', title: 'ลูกค้า 500+ ราย', desc: 'เป็นผู้ให้บริการที่ได้รับความไว้วางใจจากธุรกิจทั่วประเทศ' },
 ]
 
 const values = [
-  { icon: 'lucide:heart', title: 'ใส่ใจลูกค้า', desc: 'เราให้ความสำคัญกับทุกความต้องการของลูกค้า และพร้อมช่วยเหลือเสมอ' },
-  { icon: 'lucide:target', title: 'มุ่งมั่นคุณภาพ', desc: 'ทุกบริการผ่านมาตรฐานสูงสุด เพื่อให้ลูกค้าได้รับสิ่งที่ดีที่สุด' },
-  { icon: 'lucide:trending-up', title: 'พัฒนาไม่หยุด', desc: 'เราอัพเดตเทคโนโลยีอยู่เสมอ เพื่อให้ลูกค้าได้ใช้สิ่งที่ดีที่สุด' },
-]
-
-const cultures = [
-  'Remote-First',
-  'เน้นผลลัพธ์',
-  'เรียนรู้ตลอดเวลา',
-  'เปิดกว้างทุกไอเดีย',
-  'Work-Life Balance',
-  'ทีมเวิร์ค',
+  { icon: 'lucide:heart', title: 'ใส่ใจลูกค้า', desc: 'เราให้ความสำคัญกับทุกความต้องการของลูกค้า และพร้อมช่วยเหลือเสมอ', image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&h=300&fit=crop&q=80' },
+  { icon: 'lucide:target', title: 'มุ่งมั่นคุณภาพ', desc: 'ทุกบริการผ่านมาตรฐานสูงสุด เพื่อให้ลูกค้าได้รับสิ่งที่ดีที่สุด', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=300&fit=crop&q=80' },
+  { icon: 'lucide:trending-up', title: 'พัฒนาไม่หยุด', desc: 'เราอัพเดตเทคโนโลยีอยู่เสมอ เพื่อให้ลูกค้าได้ใช้สิ่งที่ดีที่สุด', image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=500&h=300&fit=crop&q=80' },
 ]
 
 const stats = [
