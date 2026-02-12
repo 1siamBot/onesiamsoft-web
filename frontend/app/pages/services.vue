@@ -1,58 +1,40 @@
 <template>
-  <div class="bg-black min-h-screen">
+  <div>
     <!-- Hero -->
-    <section class="relative pt-32 pb-20 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-black to-gray-950"></div>
-      <div class="absolute top-0 right-0 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"></div>
-      <div class="section-container relative z-10 text-center">
-        <div class="badge-primary mx-auto mb-6">
-          <Icon name="lucide:layers" class="w-3.5 h-3.5" />
-          Our Solutions
+    <section class="pt-32 pb-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="text-sm text-sky-400 font-medium tracking-wide uppercase mb-4">Services</p>
+          <h1 class="heading-xl mb-6">บริการ<span class="accent">ครบวงจร</span></h1>
+          <p class="text-lg text-gray-400 leading-relaxed">โซลูชันโครงสร้างพื้นฐานดิจิทัลที่ออกแบบมาเพื่อรองรับทุกขนาดธุรกิจ</p>
         </div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">Enterprise Solutions</h1>
-        <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-          โซลูชันครบวงจรสำหรับธุรกิจดิจิทัล ตั้งแต่ Cloud Infrastructure ไปจนถึง Custom Development
-        </p>
       </div>
     </section>
 
-    <!-- Services Detail -->
-    <section class="relative py-24 overflow-hidden">
-      <div class="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary-600/5 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-3xl"></div>
-      <div class="section-container relative z-10">
-        <div class="space-y-24">
-          <div v-for="(s, i) in services" :key="s.title"
-            class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <!-- Content -->
-            <div :class="i % 2 === 1 ? 'lg:order-2' : ''">
-              <div class="badge-primary mb-4">
-                <Icon :name="s.icon" class="w-3.5 h-3.5" />
-                {{ s.badge }}
-              </div>
-              <h2 class="text-3xl font-bold text-white mb-4">{{ s.title }}</h2>
-              <p class="text-gray-400 leading-relaxed mb-8">{{ s.desc }}</p>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div v-for="f in s.features" :key="f" class="flex items-center gap-3 text-sm text-gray-400">
-                  <div class="w-5 h-5 rounded-full bg-accent-500/20 flex items-center justify-center flex-shrink-0">
-                    <Icon name="lucide:check" class="w-3 h-3 text-accent-400" />
-                  </div>
-                  {{ f }}
-                </div>
-              </div>
-              <div class="mt-8 flex gap-3">
-                <NuxtLink to="/contact" class="btn-primary !text-sm">
-                  สอบถามราคา
-                  <Icon name="lucide:arrow-right" class="w-4 h-4" />
-                </NuxtLink>
-              </div>
+    <!-- Services -->
+    <section v-for="(service, i) in services" :key="service.title" class="py-20 border-t border-white/[0.06]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center" :class="i % 2 ? 'lg:[direction:rtl]' : ''">
+          <div :class="i % 2 ? 'lg:[direction:ltr]' : ''">
+            <div class="w-14 h-14 rounded-2xl bg-sky-500/10 flex items-center justify-center mb-6">
+              <Icon :name="service.icon" class="w-7 h-7 text-sky-400" />
             </div>
-            <!-- Visual -->
-            <div :class="i % 2 === 1 ? 'lg:order-1' : ''">
-              <div class="rounded-2xl overflow-hidden border border-white/10">
-                <img :src="s.image" :alt="s.title" class="w-full h-[320px] object-cover" loading="lazy" />
-              </div>
+            <h2 class="heading-md mb-4">{{ service.title }}</h2>
+            <p class="text-muted text-lg mb-8">{{ service.desc }}</p>
+            <ul class="space-y-3">
+              <li v-for="f in service.features" :key="f" class="flex items-center gap-3 text-gray-300">
+                <Icon name="lucide:check" class="w-5 h-5 text-sky-400 shrink-0" />
+                <span>{{ f }}</span>
+              </li>
+            </ul>
+            <div v-if="service.price" class="mt-8">
+              <span class="text-sm text-gray-500">เริ่มต้น</span>
+              <span class="text-2xl font-bold text-white ml-2">{{ service.price }}</span>
+            </div>
+          </div>
+          <div :class="i % 2 ? 'lg:[direction:ltr]' : ''">
+            <div class="glass-card aspect-video flex items-center justify-center">
+              <Icon :name="service.icon" class="w-20 h-20 text-white/10" />
             </div>
           </div>
         </div>
@@ -60,16 +42,11 @@
     </section>
 
     <!-- CTA -->
-    <section class="relative py-24 overflow-hidden">
-      <div class="absolute inset-0 bg-white/[0.02]"></div>
-      <div class="absolute top-0 left-1/2 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-3xl -translate-x-1/2"></div>
-      <div class="section-container relative z-10 text-center">
-        <h2 class="text-3xl font-extrabold text-white mb-4">ไม่แน่ใจว่าบริการไหนเหมาะกับคุณ?</h2>
-        <p class="text-gray-400 mb-8 max-w-xl mx-auto">ปรึกษาทีมผู้เชี่ยวชาญของเราฟรี เราพร้อมช่วยออกแบบโซลูชันที่เหมาะสมที่สุดสำหรับธุรกิจของคุณ</p>
-        <NuxtLink to="/contact" class="btn-primary !py-3.5 !text-base">
-          <Icon name="lucide:message-circle" class="w-5 h-5" />
-          ปรึกษาฟรี
-        </NuxtLink>
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="heading-lg mb-6">ต้องการคำปรึกษา?</h2>
+        <p class="text-muted text-lg max-w-xl mx-auto mb-10">ทีมผู้เชี่ยวชาญพร้อมช่วยคุณเลือกบริการที่เหมาะสมที่สุด</p>
+        <NuxtLink to="/contact" class="btn-primary text-base">ติดต่อเรา</NuxtLink>
       </div>
     </section>
   </div>
@@ -77,58 +54,66 @@
 
 <script setup>
 useSeoMeta({
-  title: 'บริการ — OneSiamSoft Enterprise Solutions',
-  description: 'Cloud Server, Web Hosting, Domain, Dedicated Server, Business Email, WordPress Hosting และ Custom Solutions สำหรับทุกธุรกิจ',
+  title: 'บริการ — OneSiamSoft',
+  description: 'บริการ Cloud Server, Web Hosting, Domain, Dedicated Server และอื่นๆ',
 })
 
 const services = [
   {
-    icon: 'lucide:cloud', badge: 'Cloud', title: 'Cloud Server',
-    desc: 'Cloud VPS ประสิทธิภาพสูงด้วย SSD NVMe, Enterprise-Grade Hardware พร้อม Auto Scaling และ Snapshot สำหรับสำรองข้อมูล',
-    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80',
-    features: ['SSD NVMe Storage', 'Auto Scaling', 'Snapshot & Backup', 'DDoS Protection', '99.9% Uptime SLA', 'Root Access'],
+    icon: 'lucide:cloud',
+    title: 'Cloud Server',
+    desc: 'เซิร์ฟเวอร์คลาวด์ประสิทธิภาพสูง ใช้ SSD NVMe รองรับ Auto-scaling พร้อมระบบ Backup อัตโนมัติ',
+    features: ['SSD NVMe Storage', 'Auto-scaling', 'Daily Backup', 'DDoS Protection', '99.9% Uptime SLA'],
+    price: '299 ฿/เดือน',
   },
   {
-    icon: 'lucide:globe', badge: 'Hosting', title: 'Web Hosting',
-    desc: 'Managed Web Hosting พร้อม cPanel, ฟรี SSL ทุกแพ็กเกจ รองรับ PHP, Node.js และอื่นๆ ย้ายเว็บฟรี',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-    features: ['cPanel Control', 'Free SSL', 'PHP ทุกเวอร์ชัน', 'Daily Backup', 'Email Hosting', 'Free Migration'],
+    icon: 'lucide:globe',
+    title: 'Web Hosting',
+    desc: 'เว็บโฮสติ้งที่เสถียรและรวดเร็ว รองรับ CMS ยอดนิยม พร้อม SSL ฟรี',
+    features: ['LiteSpeed Web Server', 'Free SSL Certificate', 'cPanel Control Panel', 'One-click Installer', 'Email Accounts'],
+    price: '99 ฿/เดือน',
   },
   {
-    icon: 'lucide:link', badge: 'Domain', title: 'Domain Registration',
-    desc: 'จดโดเมนราคาพิเศษ ทั้ง .com .in.th .co.th .net พร้อม DNS Management และ WHOIS Privacy Protection',
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80',
-    features: ['.com เริ่มต้น 500฿/ปี', '.in.th เริ่มต้น 400฿/ปี', '.co.th เริ่มต้น 580฿/ปี', '.net เริ่มต้น 500฿/ปี', 'DNS Management', 'WHOIS Privacy'],
+    icon: 'lucide:at-sign',
+    title: 'Domain Registration',
+    desc: 'จดโดเมนทุกนามสกุล พร้อมระบบจัดการ DNS ที่ใช้งานง่าย',
+    features: ['.com เริ่มต้น 500฿/ปี', '.in.th เริ่มต้น 400฿/ปี', '.co.th เริ่มต้น 580฿/ปี', 'DNS Management', 'WHOIS Privacy'],
+    price: '400 ฿/ปี',
   },
   {
-    icon: 'lucide:server', badge: 'Dedicated', title: 'Dedicated Server',
-    desc: 'เซิร์ฟเวอร์เฉพาะสำหรับองค์กร ประสิทธิภาพสูงสุด Root Access เต็มรูปแบบ พร้อม DDoS Protection',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
-    features: ['Full Root Access', 'Enterprise Hardware', 'DDoS Protection L3-L7', 'Dedicated IP', '1Gbps Network', '24/7 Monitoring'],
+    icon: 'lucide:server',
+    title: 'Dedicated Server',
+    desc: 'เซิร์ฟเวอร์เฉพาะสำหรับองค์กรที่ต้องการทรัพยากรและความปลอดภัยสูงสุด',
+    features: ['Full Root Access', 'Hardware RAID', 'Redundant Network', 'Custom Configuration', 'Managed Services'],
+    price: '4,900 ฿/เดือน',
   },
   {
-    icon: 'lucide:mail', badge: 'Email', title: 'Business Email',
-    desc: 'อีเมลองค์กรพร้อมโดเมนของตนเอง ปลอดภัยด้วย Spam Filter และ Antivirus ระดับ Enterprise',
-    image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&q=80',
-    features: ['Custom Domain', 'Spam Filter', 'Antivirus', 'Webmail Access', 'IMAP/POP3/SMTP', 'Mobile Sync'],
+    icon: 'lucide:mail',
+    title: 'Business Email',
+    desc: 'อีเมลธุรกิจ @yourdomain.com เพิ่มความน่าเชื่อถือ พร้อม Anti-spam',
+    features: ['Custom Domain Email', 'Anti-Spam & Virus', 'Webmail Access', 'IMAP/POP3/SMTP', 'Calendar & Contacts'],
+    price: '59 ฿/เดือน',
   },
   {
-    icon: 'lucide:pen-tool', badge: 'WordPress', title: 'WordPress Hosting',
-    desc: 'Optimized สำหรับ WordPress โดยเฉพาะ เร็ว ปลอดภัย พร้อม Auto Update และ Staging Environment',
-    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80',
-    features: ['WordPress Optimized', 'Auto Update', 'Staging Environment', 'WP-CLI Access', 'Free SSL', 'Daily Backup'],
+    icon: 'lucide:layout-template',
+    title: 'WordPress Hosting',
+    desc: 'โฮสติ้งที่ออกแบบมาเฉพาะสำหรับ WordPress ด้วย LiteSpeed Cache',
+    features: ['Optimized for WordPress', 'LiteSpeed Cache', 'Staging Environment', 'Auto Updates', 'Malware Scanning'],
+    price: '149 ฿/เดือน',
   },
   {
-    icon: 'lucide:monitor', badge: 'Hardware', title: 'Custom Server',
-    desc: 'สั่งประกอบ Server/Workstation ตามสเปค ดูแลติดตั้งและบำรุงรักษาโดยทีมผู้เชี่ยวชาญ',
-    image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=800&q=80',
-    features: ['Custom Spec', 'Professional Assembly', 'Warranty Support', 'On-site Service', 'Maintenance Plan', 'Hardware Upgrade'],
+    icon: 'lucide:settings',
+    title: 'Custom Server',
+    desc: 'ออกแบบเซิร์ฟเวอร์ตามสเปคที่ต้องการ ปรับแต่งได้ทุกรายละเอียด',
+    features: ['Custom Hardware Spec', 'Choice of OS', 'Network Configuration', 'Load Balancer', 'Monitoring Tools'],
+    price: null,
   },
   {
-    icon: 'lucide:lightbulb', badge: 'Solutions', title: 'Custom Solutions',
-    desc: 'ออกแบบ IT Infrastructure, พัฒนาซอฟต์แวร์ และ System Integration ตามความต้องการ ปรึกษาฟรี',
-    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80',
-    features: ['IT Consulting', 'System Design', 'Software Development', 'System Integration', 'Cloud Migration', 'Free Consultation'],
+    icon: 'lucide:code',
+    title: 'Custom Solutions',
+    desc: 'พัฒนาระบบซอฟต์แวร์ตามความต้องการเฉพาะของธุรกิจ',
+    features: ['Web Application', 'API Development', 'System Integration', 'DevOps & CI/CD', 'Consulting'],
+    price: null,
   },
 ]
 </script>
