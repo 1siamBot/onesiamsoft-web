@@ -9,7 +9,8 @@
     -moz-osx-font-smoothing: grayscale;
   }
   body {
-    @apply bg-[#0c1222] text-gray-400;
+    background-color: #0c1222 !important;
+    color: #9ca3af;
   }
   ::selection {
     @apply bg-sky-500/30 text-white;

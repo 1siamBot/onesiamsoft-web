@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss'
 
 export default {
   content: [],
+  safelist: ['bg-[#0c1222]', 'text-gray-400'],
   theme: {
     extend: {
       fontFamily: {
