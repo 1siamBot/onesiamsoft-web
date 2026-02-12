@@ -6,7 +6,7 @@
       <div class="absolute inset-0">
         <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-black to-gray-950"></div>
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-3xl"></div>
         <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
       </div>
@@ -111,7 +111,7 @@
     <!-- Services -->
     <section class="relative py-24 overflow-hidden">
       <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-primary-600/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-3xl"></div>
       <div class="section-container relative z-10">
         <div class="text-center mb-16">
           <div class="badge-primary mx-auto mb-4">
@@ -204,7 +204,7 @@
 
     <!-- Domain Pricing -->
     <section class="relative py-24 overflow-hidden">
-      <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-3xl"></div>
       <div class="section-container relative z-10">
         <div class="text-center mb-16">
           <div class="badge-primary mx-auto mb-4">
@@ -305,19 +305,19 @@ const stats = [
 const services = [
   { icon: 'lucide:cloud', title: 'Cloud Server', desc: 'Cloud VPS ประสิทธิภาพสูงด้วย SSD NVMe และ Enterprise Hardware พร้อม Auto Scaling', bgClass: 'bg-blue-500/20', iconClass: 'text-blue-400' },
   { icon: 'lucide:globe', title: 'Web Hosting', desc: 'Managed Hosting พร้อม cPanel, ฟรี SSL ทุกแพ็กเกจ รองรับ PHP ทุกเวอร์ชัน', bgClass: 'bg-emerald-500/20', iconClass: 'text-emerald-400' },
-  { icon: 'lucide:link', title: 'Domain', desc: 'จดโดเมนราคาพิเศษ ทั้ง .com .th .net พร้อม DNS Management', bgClass: 'bg-purple-500/20', iconClass: 'text-purple-400' },
+  { icon: 'lucide:link', title: 'Domain', desc: 'จดโดเมนราคาพิเศษ ทั้ง .com .th .net พร้อม DNS Management', bgClass: 'bg-blue-500/20', iconClass: 'text-purple-400' },
   { icon: 'lucide:server', title: 'Dedicated Server', desc: 'เซิร์ฟเวอร์เฉพาะสำหรับองค์กร Root Access เต็มรูปแบบ DDoS Protection', bgClass: 'bg-orange-500/20', iconClass: 'text-orange-400' },
   { icon: 'lucide:mail', title: 'Business Email', desc: 'อีเมลองค์กรพร้อมโดเมนของตนเอง ปลอดภัยด้วย Spam Filter ระดับ Enterprise', bgClass: 'bg-rose-500/20', iconClass: 'text-rose-400' },
   { icon: 'lucide:pen-tool', title: 'WordPress Hosting', desc: 'Optimized สำหรับ WordPress โดยเฉพาะ เร็ว ปลอดภัย อัพเดทอัตโนมัติ', bgClass: 'bg-cyan-500/20', iconClass: 'text-cyan-400' },
   { icon: 'lucide:monitor', title: 'Custom Server', desc: 'สั่งประกอบ Server/Workstation ตามสเปค ดูแลโดยทีมผู้เชี่ยวชาญ', bgClass: 'bg-amber-500/20', iconClass: 'text-amber-400' },
-  { icon: 'lucide:lightbulb', title: 'Custom Solutions', desc: 'ออกแบบ IT Infrastructure ตามความต้องการ ปรึกษาฟรี', bgClass: 'bg-indigo-500/20', iconClass: 'text-indigo-400' },
+  { icon: 'lucide:lightbulb', title: 'Custom Solutions', desc: 'ออกแบบ IT Infrastructure ตามความต้องการ ปรึกษาฟรี', bgClass: 'bg-sky-500/20', iconClass: 'text-sky-400' },
 ]
 
 const features = [
   { icon: 'lucide:zap', title: 'ประสิทธิภาพสูงสุด', desc: 'ใช้ SSD NVMe, Latest-Gen CPU และ Enterprise Networking เพื่อความเร็วระดับ Premium', bgClass: 'bg-amber-500/20', iconClass: 'text-amber-400' },
   { icon: 'lucide:shield-check', title: 'ปลอดภัยระดับ Enterprise', desc: 'WAF, DDoS Protection L3-L7, SSL Certificate ฟรี และระบบ Monitoring 24/7', bgClass: 'bg-emerald-500/20', iconClass: 'text-emerald-400' },
   { icon: 'lucide:headphones', title: 'ทีมผู้เชี่ยวชาญ 24/7', desc: 'วิศวกรที่มีประสบการณ์พร้อมให้ความช่วยเหลือทุกปัญหา ย้ายเว็บไซต์ฟรี', bgClass: 'bg-blue-500/20', iconClass: 'text-blue-400' },
-  { icon: 'lucide:refresh-cw', title: 'Backup อัตโนมัติ', desc: 'ระบบ Backup ทุกวัน สำรองข้อมูลหลายจุด กู้คืนได้ทันทีเมื่อต้องการ', bgClass: 'bg-purple-500/20', iconClass: 'text-purple-400' },
+  { icon: 'lucide:refresh-cw', title: 'Backup อัตโนมัติ', desc: 'ระบบ Backup ทุกวัน สำรองข้อมูลหลายจุด กู้คืนได้ทันทีเมื่อต้องการ', bgClass: 'bg-blue-500/20', iconClass: 'text-purple-400' },
 ]
 
 const domains = [

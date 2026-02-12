@@ -4,7 +4,7 @@
     <section class="relative pt-32 pb-20 overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-black to-gray-950"></div>
       <div class="absolute top-0 right-1/4 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-1/3 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/3 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"></div>
       <div class="section-container relative z-10 text-center">
         <div class="badge-primary mx-auto mb-6">
           <Icon name="lucide:mail" class="w-3.5 h-3.5" />
@@ -20,7 +20,7 @@
     <!-- Contact Content -->
     <section class="relative py-24 overflow-hidden">
       <div class="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary-600/5 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-3xl"></div>
       <div class="section-container relative z-10">
         <div class="grid lg:grid-cols-5 gap-12">
           <!-- Contact Info -->
@@ -120,7 +120,7 @@ const serviceOptions = ['Cloud Server', 'Web Hosting', 'Domain', 'Dedicated Serv
 const contactInfo = [
   { icon: 'lucide:map-pin', title: 'ที่อยู่', value: '28/99 ซอยหมู่บ้านบ่อฝ้าย ต.หัวหิน อ.หัวหิน จ.ประจวบคีรีขันธ์ 77110', bgClass: 'bg-blue-500/20', iconClass: 'text-blue-400' },
   { icon: 'lucide:mail', title: 'อีเมล', value: 'support@onesiamsoft.com', bgClass: 'bg-emerald-500/20', iconClass: 'text-emerald-400' },
-  { icon: 'lucide:clock', title: 'เวลาทำการ', value: 'เปิดให้บริการ 24 ชั่วโมง ทุกวัน', bgClass: 'bg-purple-500/20', iconClass: 'text-purple-400' },
+  { icon: 'lucide:clock', title: 'เวลาทำการ', value: 'เปิดให้บริการ 24 ชั่วโมง ทุกวัน', bgClass: 'bg-blue-500/20', iconClass: 'text-purple-400' },
 ]
 
 const socials = [

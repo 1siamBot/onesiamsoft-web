@@ -4,7 +4,7 @@
     <section class="relative pt-32 pb-20 overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-black to-gray-950"></div>
       <div class="absolute top-0 left-1/3 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"></div>
       <div class="section-container relative z-10 text-center">
         <div class="badge-primary mx-auto mb-6">
           <Icon name="lucide:building-2" class="w-3.5 h-3.5" />
@@ -49,7 +49,7 @@
 
     <!-- Values -->
     <section class="relative py-24 overflow-hidden">
-      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-3xl"></div>
       <div class="section-container relative z-10">
         <div class="text-center mb-16">
           <h2 class="section-heading">คุณค่าที่เรายึดมั่น</h2>
@@ -135,7 +135,7 @@ useSeoMeta({
 const values = [
   { icon: 'lucide:shield-check', title: 'ความน่าเชื่อถือ', desc: 'เรามุ่งมั่นรักษามาตรฐานการบริการระดับสูงสุด ด้วย 99.9% Uptime SLA และระบบ Monitoring 24/7', bgClass: 'bg-emerald-500/20', iconClass: 'text-emerald-400' },
   { icon: 'lucide:users', title: 'ลูกค้าเป็นศูนย์กลาง', desc: 'ทุกโซลูชันออกแบบเพื่อตอบโจทย์ธุรกิจของลูกค้า ด้วยทีมซัพพอร์ตที่พร้อมดูแลตลอด 24 ชั่วโมง', bgClass: 'bg-blue-500/20', iconClass: 'text-blue-400' },
-  { icon: 'lucide:rocket', title: 'นวัตกรรม', desc: 'เรานำเทคโนโลยีล่าสุดมาใช้อย่างต่อเนื่อง เพื่อให้ลูกค้าได้รับประสิทธิภาพสูงสุดเสมอ', bgClass: 'bg-purple-500/20', iconClass: 'text-purple-400' },
+  { icon: 'lucide:rocket', title: 'นวัตกรรม', desc: 'เรานำเทคโนโลยีล่าสุดมาใช้อย่างต่อเนื่อง เพื่อให้ลูกค้าได้รับประสิทธิภาพสูงสุดเสมอ', bgClass: 'bg-blue-500/20', iconClass: 'text-purple-400' },
 ]
 
 const stats = [

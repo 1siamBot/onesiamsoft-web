@@ -1,6 +1,6 @@
 <template>
   <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-    :class="scrolled ? 'bg-black/80 backdrop-blur-2xl border-b border-white/5 shadow-lg' : 'bg-transparent'">
+    :class="scrolled ? 'bg-black/95 backdrop-blur-2xl border-b border-white/5 shadow-lg shadow-black/50' : 'bg-transparent'">
     <div class="section-container">
       <div class="flex justify-between items-center h-[72px]">
         <NuxtLink to="/" class="flex items-center gap-2.5 group">
