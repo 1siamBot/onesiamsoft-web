@@ -138,7 +138,7 @@ useSeoMeta({
 })
 
 const contactCards = [
-  { icon: 'lucide:mail', title: 'อีเมล', detail: 'info@onesiamsoft.com<br>support@onesiamsoft.com', bgClass: 'bg-blue-50', iconClass: 'text-blue-600' },
+  { icon: 'lucide:mail', title: 'อีเมล', detail: 'support@onesiamsoft.com', bgClass: 'bg-blue-50', iconClass: 'text-blue-600' },
   { icon: 'lucide:message-circle', title: 'Live Chat', detail: 'พูดคุยกับทีมซัพพอร์ท<br>ให้บริการ 24/7', bgClass: 'bg-emerald-50', iconClass: 'text-emerald-600' },
   { icon: 'lucide:map-pin', title: 'ที่อยู่', detail: '28/99 ซอยหมู่บ้านบ่อฝ้าย<br>ต.หัวหิน อ.หัวหิน จ.ประจวบคีรีขันธ์ 77110', bgClass: 'bg-purple-50', iconClass: 'text-purple-600' },
 ]

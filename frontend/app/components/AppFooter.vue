@@ -54,7 +54,6 @@
             <li class="flex items-start gap-3">
               <Icon name="lucide:mail" class="w-4 h-4 mt-0.5 text-primary-400 flex-shrink-0" />
               <div>
-                <div>info@onesiamsoft.com</div>
                 <div>support@onesiamsoft.com</div>
               </div>
             </li>
