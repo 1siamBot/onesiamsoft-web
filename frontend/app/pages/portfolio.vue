@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="bg-slate-950 min-h-screen">
     <!-- Hero -->
-    <section class="relative bg-slate-950 pt-32 pb-20 overflow-hidden">
+    <section class="relative pt-32 pb-20 overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-slate-950 to-slate-900"></div>
-      <div class="absolute top-0 right-0 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-0 right-1/3 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl"></div>
       <div class="section-container relative z-10 text-center">
         <div class="badge-primary mx-auto mb-6">
           <Icon name="lucide:briefcase" class="w-3.5 h-3.5" />
@@ -11,87 +12,55 @@
         </div>
         <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">ผลงานของเรา</h1>
         <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-          ผลงานที่เราภูมิใจ สะท้อนคุณภาพและความเชี่ยวชาญของทีม OneSiamSoft
+          โปรเจกต์ที่เราภูมิใจนำเสนอ — ตัวอย่างผลงานจริงที่ส่งมอบให้ลูกค้า
         </p>
       </div>
     </section>
 
-    <!-- Portfolio Grid -->
-    <section class="py-24">
-      <div class="section-container">
-        <!-- Category Filters -->
-        <div class="flex flex-wrap items-center gap-2 mb-12">
-          <button v-for="cat in categories" :key="cat"
-            class="px-4 py-2 rounded-lg text-sm font-medium transition-all"
-            :class="selectedCategory === cat
-              ? 'bg-primary-600 text-white shadow-sm'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'"
-            @click="selectedCategory = cat">
-            {{ cat }}
-          </button>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <a v-for="project in filteredProjects" :key="project.title"
-            :href="project.url" target="_blank" rel="noopener noreferrer"
-            class="card card-hover overflow-hidden group cursor-pointer">
-            <!-- Preview -->
-            <div class="relative h-56 overflow-hidden bg-gray-100">
-              <img :src="project.screenshot" :alt="project.title" 
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-              <!-- Overlay on hover -->
-              <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div class="flex items-center gap-2 text-white font-semibold">
-                  <Icon name="lucide:external-link" class="w-5 h-5" />
+    <!-- Projects -->
+    <section class="relative py-24 overflow-hidden">
+      <div class="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary-600/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-3xl"></div>
+      <div class="section-container relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div v-for="project in projects" :key="project.title" class="glass-card-hover overflow-hidden group">
+            <div class="relative h-64 overflow-hidden">
+              <img :src="project.image" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+            </div>
+            <div class="p-8">
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span v-for="tag in project.tags" :key="tag" class="badge-primary text-xs">{{ tag }}</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary-300 transition-colors">{{ project.title }}</h3>
+              <p class="text-gray-400 leading-relaxed mb-6">{{ project.desc }}</p>
+              <div class="flex flex-wrap gap-4">
+                <a v-if="project.url" :href="project.url" target="_blank" rel="noopener"
+                  class="btn-primary !text-sm">
+                  <Icon name="lucide:external-link" class="w-4 h-4" />
                   เยี่ยมชมเว็บไซต์
-                </div>
+                </a>
+                <button class="btn-secondary !bg-white/10 !text-white !border-white/10 hover:!bg-white/20 !text-sm">
+                  <Icon name="lucide:info" class="w-4 h-4" />
+                  รายละเอียด
+                </button>
               </div>
             </div>
-
-            <!-- Info -->
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="badge text-xs" :class="project.badgeClass">{{ project.category }}</span>
-                <span class="text-gray-400 text-xs">{{ project.year }}</span>
-              </div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-                {{ project.title }}
-              </h3>
-              <p class="text-sm text-gray-500 leading-relaxed mb-4">{{ project.desc }}</p>
-
-              <!-- Tech Stack -->
-              <div class="flex flex-wrap gap-1.5">
-                <span v-for="tech in project.tech" :key="tech"
-                  class="px-2 py-0.5 bg-gray-100 text-gray-500 text-xs rounded-md font-medium">
-                  {{ tech }}
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="py-20 bg-gray-50">
-      <div class="section-container">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          <div v-for="stat in stats" :key="stat.label" class="text-center">
-            <div class="text-4xl font-extrabold text-gray-900 mb-1">{{ stat.value }}</div>
-            <div class="text-sm text-gray-500">{{ stat.label }}</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-24">
-      <div class="section-container text-center">
-        <h2 class="section-heading text-gray-900 mb-4">มีโปรเจ็คในใจ?</h2>
-        <p class="section-subheading mb-8">ให้เราช่วยสร้างผลงานชิ้นถัดไปให้กับธุรกิจของคุณ — ปรึกษาฟรี</p>
+    <section class="relative py-24 overflow-hidden">
+      <div class="absolute inset-0 bg-white/[0.02]"></div>
+      <div class="absolute top-0 left-1/2 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-3xl -translate-x-1/2"></div>
+      <div class="section-container relative z-10 text-center">
+        <h2 class="text-3xl font-extrabold text-white mb-4">มีโปรเจกต์ในใจ?</h2>
+        <p class="text-gray-400 mb-8 max-w-xl mx-auto">ให้เราช่วยคุณทำให้เป็นจริง — ปรึกษาฟรี ไม่มีค่าใช้จ่าย</p>
         <NuxtLink to="/contact" class="btn-primary !py-3.5 !text-base">
           <Icon name="lucide:message-circle" class="w-5 h-5" />
-          ปรึกษาโปรเจ็ค
+          ปรึกษาโปรเจกต์
         </NuxtLink>
       </div>
     </section>
@@ -100,45 +69,24 @@
 
 <script setup>
 useSeoMeta({
-  title: 'ผลงานของเรา — OneSiamSoft Portfolio',
-  description: 'ผลงานเว็บไซต์และระบบที่ OneSiamSoft พัฒนาให้ลูกค้า ครอบคลุมทั้ง Web Application, E-Commerce และ Platform',
+  title: 'ผลงาน — OneSiamSoft Portfolio',
+  description: 'ผลงานของ OneSiamSoft - ตัวอย่างโปรเจกต์ที่เราส่งมอบให้ลูกค้า ทั้ง Web Application, Cloud Infrastructure และ Custom Solutions',
 })
-
-const categories = ['ทั้งหมด', 'Web Platform', 'Web Application', 'E-Commerce']
-const selectedCategory = ref('ทั้งหมด')
 
 const projects = [
   {
     title: 'MetaSocial24Hr',
+    desc: 'แพลตฟอร์ม Social Media Management ครบวงจร สำหรับจัดการโซเชียลมีเดียหลายแพลตฟอร์มในที่เดียว พร้อมระบบ Analytics, Scheduling และ Auto-posting ที่ทำงาน 24 ชั่วโมง',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80',
     url: 'https://metasocial24hr.com/',
-    category: 'Web Platform',
-    badgeClass: 'bg-blue-50 text-blue-700 ring-1 ring-blue-100',
-    screenshot: 'https://api.microlink.io/?url=https://metasocial24hr.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=720',
-    year: '2026',
-    desc: 'แพลตฟอร์มบริการด้านโซเชียลมีเดียครบวงจร ปั้มไลค์ ปั้มติดตาม เพิ่มยอดขายการตลาด รองรับ API สำหรับตัวแทนจำหน่าย',
-    tech: ['Web App', 'Payment Gateway', 'API', 'Social Media'],
+    tags: ['Web Application', 'Social Media', 'Cloud Infrastructure'],
   },
   {
-    title: 'OneSiamSoft',
-    url: 'https://onesiamsoft.com/',
-    category: 'Web Application',
-    badgeClass: 'bg-emerald-50 text-emerald-700 ring-1 ring-emerald-100',
-    screenshot: 'https://api.microlink.io/?url=https://onesiamsoft.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=720',
-    year: '2026',
-    desc: 'เว็บไซต์องค์กรสำหรับบริษัท วัน สยามซอฟท์ จำกัด ให้บริการ Cloud Server, Web Hosting, Domain และ Custom Solutions',
-    tech: ['NuxtJS', 'NestJS', 'Prisma', 'PostgreSQL'],
+    title: 'OneSiamSoft Corporate Website',
+    desc: 'เว็บไซต์องค์กรของ OneSiamSoft ออกแบบด้วย Modern UI/UX พร้อมระบบ CMS รองรับ SEO อย่างเต็มรูปแบบ และ Performance Optimization สำหรับประสบการณ์ผู้ใช้ที่ดีที่สุด',
+    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80',
+    url: 'https://www.onesiamsoft.com',
+    tags: ['Corporate Website', 'Nuxt.js', 'SEO Optimized'],
   },
-]
-
-const filteredProjects = computed(() => {
-  if (selectedCategory.value === 'ทั้งหมด') return projects
-  return projects.filter(p => p.category === selectedCategory.value)
-})
-
-const stats = [
-  { value: '50+', label: 'โปรเจ็คที่สำเร็จ' },
-  { value: '30+', label: 'ลูกค้าองค์กร' },
-  { value: '100%', label: 'ส่งมอบตรงเวลา' },
-  { value: '5 ★', label: 'ความพึงพอใจ' },
 ]
 </script>
