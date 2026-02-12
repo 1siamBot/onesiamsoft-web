@@ -2,11 +2,17 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-# Copy all source first to ensure rebuild on any change
+# Copy everything first to bust Docker cache on any source change
 COPY . .
 
-# Install and build
-RUN npm install --ignore-scripts && npm run build
+# Remove any macOS-specific lock/artifacts
+RUN rm -rf node_modules package-lock.json .output .nuxt
+
+# Install deps fresh (no lock file = platform-correct binaries)
+RUN npm install
+
+# Build
+RUN npm run build
 
 FROM node:22-alpine AS runner
 
