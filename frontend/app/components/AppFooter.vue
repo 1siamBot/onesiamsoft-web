@@ -6,12 +6,7 @@
         <!-- Brand -->
         <div class="lg:col-span-4">
           <div class="flex items-center gap-2.5 mb-5">
-            <div class="relative w-8 h-8">
-              <div class="absolute inset-0 bg-primary-500 rounded-lg"></div>
-              <div class="absolute inset-0 flex items-center justify-center">
-                <span class="text-white font-bold text-xs">OS</span>
-              </div>
-            </div>
+            <img src="/images/logo.jpg" alt="OneSiamSoft" class="w-8 h-8 rounded-lg object-contain" />
             <span class="text-lg font-bold text-white">OneSiam<span class="text-primary-400">Soft</span></span>
           </div>
           <p class="text-sm leading-relaxed mb-6 max-w-sm">

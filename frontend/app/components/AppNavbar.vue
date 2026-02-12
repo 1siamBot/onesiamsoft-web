@@ -5,12 +5,7 @@
       <div class="flex justify-between items-center h-[72px]">
         <!-- Logo -->
         <NuxtLink to="/" class="flex items-center gap-2.5 group">
-          <div class="relative w-9 h-9">
-            <div class="absolute inset-0 bg-primary-600 rounded-lg rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
-            <div class="absolute inset-0 bg-primary-500 rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold text-sm">OS</span>
-            </div>
-          </div>
+          <img src="/images/logo.jpg" alt="OneSiamSoft" class="w-10 h-10 rounded-lg object-contain" />
           <div class="flex flex-col">
             <span class="text-lg font-bold leading-tight" :class="scrolled || !isHero ? 'text-gray-900' : 'text-white'">
               OneSiam<span class="text-primary-500">Soft</span>
