@@ -16,7 +16,7 @@
     <!-- Featured Post -->
     <section class="pb-12">
       <div class="max-w-7xl mx-auto px-6">
-        <NuxtLink :to="`/blog/${posts[0].slug}`" class="glass-card-hover overflow-hidden block">
+        <NuxtLink :to="`/blog/${posts[0].slug}`" class="glass-card-hover overflow-hidden block group">
           <div class="flex flex-col lg:flex-row">
             <div class="w-full lg:w-1/2 h-64 lg:h-auto overflow-hidden">
               <img :src="`https://images.unsplash.com/${posts[0].image}?w=800&h=500&fit=crop&q=80`"
@@ -28,11 +28,15 @@
               </span>
               <h2 class="text-2xl lg:text-3xl font-bold text-white mb-3">{{ posts[0].title }}</h2>
               <p class="text-gray-400 leading-relaxed mb-4">{{ posts[0].excerpt }}</p>
-              <div class="flex items-center gap-4 text-sm text-gray-500">
+              <div class="flex items-center gap-4 text-sm text-gray-500 mb-5">
                 <span>{{ posts[0].date }}</span>
                 <span>•</span>
                 <span>{{ posts[0].readTime }} นาทีอ่าน</span>
               </div>
+              <span class="inline-flex items-center gap-2 text-sky-400 font-semibold group-hover:text-sky-300 transition-colors">
+                อ่านต่อ
+                <Icon name="lucide:arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </span>
             </div>
           </div>
         </NuxtLink>
@@ -52,10 +56,16 @@
               <span class="inline-block text-xs font-medium text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full mb-3">{{ post.category }}</span>
               <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-sky-400 transition-colors">{{ post.title }}</h3>
               <p class="text-gray-500 text-sm leading-relaxed mb-4">{{ post.excerpt }}</p>
-              <div class="flex items-center gap-4 text-xs text-gray-600">
-                <span>{{ post.date }}</span>
-                <span>•</span>
-                <span>{{ post.readTime }} นาทีอ่าน</span>
+              <div class="flex items-center justify-between mt-4 pt-4 border-t border-white/[0.06]">
+                <div class="flex items-center gap-3 text-xs text-gray-600">
+                  <span>{{ post.date }}</span>
+                  <span>•</span>
+                  <span>{{ post.readTime }} นาทีอ่าน</span>
+                </div>
+                <span class="inline-flex items-center gap-1 text-sm text-sky-400 font-medium group-hover:text-sky-300 transition-colors">
+                  อ่านต่อ
+                  <Icon name="lucide:arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </span>
               </div>
             </div>
           </NuxtLink>
