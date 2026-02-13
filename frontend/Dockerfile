@@ -2,17 +2,23 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-# Copy everything first to bust Docker cache on any source change
+# Copy everything
 COPY . .
 
-# Remove any macOS-specific lock/artifacts
+# Debug: verify [slug].vue was copied
+RUN ls -la app/pages/blog/ && echo "FILES OK"
+
+# Remove macOS artifacts
 RUN rm -rf node_modules package-lock.json .output .nuxt
 
-# Install deps fresh (no lock file = platform-correct binaries)
+# Install deps fresh
 RUN npm install
 
 # Build
 RUN npm run build
+
+# Verify slug chunk exists in build
+RUN ls .output/server/chunks/build/ | grep -i slug && echo "BUILD OK"
 
 FROM node:22-alpine AS runner
 
