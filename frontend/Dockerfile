@@ -2,23 +2,23 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-# Copy everything
-COPY . .
-
-# Debug: verify [slug].vue was copied
-RUN ls -la app/pages/blog/ && echo "FILES OK"
+# Use JSON form of COPY to avoid glob interpretation of brackets [slug].vue
+COPY [".", "."]
 
 # Remove macOS artifacts
 RUN rm -rf node_modules package-lock.json .output .nuxt
 
-# Install deps fresh
+# Verify files
+RUN ls -la app/pages/blog/
+
+# Install deps
 RUN npm install
 
 # Build
 RUN npm run build
 
-# Verify slug chunk exists in build
-RUN ls .output/server/chunks/build/ | grep -i slug && echo "BUILD OK"
+# Verify build output
+RUN find .output/server/chunks/build -name '*slug*' -o -name '*Slug*'
 
 FROM node:22-alpine AS runner
 

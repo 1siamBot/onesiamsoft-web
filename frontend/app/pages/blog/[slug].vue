@@ -10,14 +10,14 @@
       <div class="relative z-10 max-w-4xl mx-auto px-6 pt-24 pb-20">
         <NuxtLink to="/blog" class="inline-flex items-center gap-2 text-sky-400 text-sm mb-6 hover:text-sky-300 transition-colors">
           <Icon name="lucide:arrow-left" class="w-4 h-4" />
-          กลับไปบล็อก
+          {{ $t('blog.backToBlog') }}
         </NuxtLink>
         <span class="inline-block text-xs font-medium text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full mb-4">{{ post.category }}</span>
         <h1 class="text-3xl lg:text-5xl font-bold text-white leading-tight">{{ post.title }}</h1>
         <div class="flex items-center gap-4 mt-6 text-sm text-gray-400">
           <span>{{ post.date }}</span>
           <span>•</span>
-          <span>{{ post.readTime }} นาทีอ่าน</span>
+          <span>{{ post.readTime }} {{ $t('blog.minRead') }}</span>
         </div>
       </div>
     </section>
@@ -45,8 +45,8 @@
         <!-- Share / CTA -->
         <div class="mt-16 pt-8 border-t border-white/[0.08]">
           <div class="glass-card p-8 text-center">
-            <h3 class="text-xl font-bold text-white mb-3">สนใจบริการของเรา?</h3>
-            <p class="text-gray-400 mb-6">ปรึกษาทีมงานผู้เชี่ยวชาญฟรี ไม่มีค่าใช้จ่าย</p>
+            <h3 class="text-xl font-bold text-white mb-3">{{ $t('blog.interested') }}</h3>
+            <p class="text-gray-400 mb-6">{{ $t('blog.interestedDesc') }}</p>
             <NuxtLink to="/contact" class="inline-block px-8 py-3.5 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/25">
               ติดต่อเรา
             </NuxtLink>
@@ -55,7 +55,7 @@
 
         <!-- Related -->
         <div class="mt-16">
-          <h3 class="text-xl font-bold text-white mb-6">บทความที่เกี่ยวข้อง</h3>
+          <h3 class="text-xl font-bold text-white mb-6">{{ $t('blog.relatedPosts') }}</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <NuxtLink v-for="related in relatedPosts" :key="related.slug" :to="`/blog/${related.slug}`"
               class="glass-card-hover overflow-hidden group">

@@ -7,7 +7,22 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/icon',
     '@nuxtjs/google-fonts',
+    '@nuxtjs/i18n',
   ],
+  i18n: {
+    locales: [
+      { code: 'th', name: 'ไทย', file: 'th.json' },
+      { code: 'en', name: 'English', file: 'en.json' },
+    ],
+    defaultLocale: 'th',
+    langDir: 'locales',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_lang',
+      redirectOn: 'root',
+    },
+  },
   icon: {
     serverBundle: 'remote',
   },
@@ -21,7 +36,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      htmlAttrs: { lang: 'th', class: 'dark' },
+      htmlAttrs: { class: 'dark' },
       bodyAttrs: { class: 'bg-[#0c1222] text-gray-400' },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',

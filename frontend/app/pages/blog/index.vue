@@ -8,15 +8,15 @@
         <div class="absolute inset-0 bg-gradient-to-b from-[#0c1222]/80 via-[#0c1222]/70 to-[#0c1222]"></div>
       </div>
       <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 text-center">
-        <h1 class="text-4xl lg:text-6xl font-bold text-white tracking-tight">บล็อก</h1>
-        <p class="section-subtitle mt-4">ความรู้และเทคนิคเกี่ยวกับ Cloud, Hosting และ IT</p>
+        <h1 class="text-4xl lg:text-6xl font-bold text-white tracking-tight">{{ $t('blog.hero.title') }}</h1>
+        <p class="section-subtitle mt-4">{{ $t('blog.hero.subtitle') }}</p>
       </div>
     </section>
 
     <!-- Featured Post -->
     <section class="pb-12">
       <div class="max-w-7xl mx-auto px-6">
-        <NuxtLink :to="`/blog/${posts[0].slug}`" class="glass-card-hover overflow-hidden block group">
+        <NuxtLink :to="localePath(`/blog/${posts[0].slug}`)" class="glass-card-hover overflow-hidden block group">
           <div class="flex flex-col lg:flex-row">
             <div class="w-full lg:w-1/2 h-64 lg:h-auto overflow-hidden">
               <img :src="`https://images.unsplash.com/${posts[0].image}?w=800&h=500&fit=crop&q=80`"
@@ -31,7 +31,7 @@
               <div class="flex items-center gap-4 text-sm text-gray-500 mb-5">
                 <span>{{ posts[0].date }}</span>
                 <span>•</span>
-                <span>{{ posts[0].readTime }} นาทีอ่าน</span>
+                <span>{{ posts[0].readTime }} {{ $t('blog.minRead') }}</span>
               </div>
               <span class="inline-flex items-center gap-2 text-sky-400 font-semibold group-hover:text-sky-300 transition-colors">
                 อ่านต่อ
@@ -47,7 +47,7 @@
     <section class="section-padding">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <NuxtLink v-for="post in posts.slice(1)" :key="post.slug" :to="`/blog/${post.slug}`" class="glass-card-hover overflow-hidden group block">
+          <NuxtLink v-for="post in posts.slice(1)" :key="post.slug" :to="localePath(`/blog/${post.slug}`)" class="glass-card-hover overflow-hidden group block">
             <div class="h-48 overflow-hidden">
               <img :src="`https://images.unsplash.com/${post.image}?w=600&h=340&fit=crop&q=80`"
                 :alt="post.title" class="img-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
@@ -60,7 +60,7 @@
                 <div class="flex items-center gap-3 text-xs text-gray-600">
                   <span>{{ post.date }}</span>
                   <span>•</span>
-                  <span>{{ post.readTime }} นาทีอ่าน</span>
+                  <span>{{ post.readTime }} {{ $t('blog.minRead') }}</span>
                 </div>
                 <span class="inline-flex items-center gap-1 text-sm text-sky-400 font-medium group-hover:text-sky-300 transition-colors">
                   อ่านต่อ
@@ -76,6 +76,8 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
+const localePath = useLocalePath()
 useSeoMeta({ title: 'บล็อก - OneSiamSoft', description: 'ความรู้เกี่ยวกับ Cloud, Hosting และ IT' })
 
 const posts = [

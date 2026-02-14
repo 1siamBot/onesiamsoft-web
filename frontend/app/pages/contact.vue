@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Hero with Image -->
     <section class="relative pt-16 overflow-hidden">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&h=600&fit=crop&q=80"
@@ -8,12 +7,11 @@
         <div class="absolute inset-0 bg-gradient-to-b from-[#0c1222]/80 via-[#0c1222]/70 to-[#0c1222]"></div>
       </div>
       <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 text-center">
-        <h1 class="text-4xl lg:text-6xl font-bold text-white tracking-tight">ติดต่อเรา</h1>
-        <p class="section-subtitle mt-4">พร้อมให้บริการและตอบทุกคำถามของคุณ</p>
+        <h1 class="text-4xl lg:text-6xl font-bold text-white tracking-tight">{{ $t('contact.hero.title') }}</h1>
+        <p class="section-subtitle mt-4">{{ $t('contact.hero.subtitle') }}</p>
       </div>
     </section>
 
-    <!-- Contact Info Cards -->
     <section class="pb-16">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -28,38 +26,35 @@
       </div>
     </section>
 
-    <!-- Form + Map -->
     <section class="section-padding">
       <div class="max-w-7xl mx-auto px-6">
         <div class="flex flex-col lg:flex-row gap-8">
-          <!-- Form -->
           <div class="w-full lg:w-1/2">
             <div class="glass-card p-8">
-              <h2 class="text-2xl font-bold text-white mb-8">ส่งข้อความถึงเรา</h2>
+              <h2 class="text-2xl font-bold text-white mb-8">{{ $t('contact.form.title') }}</h2>
               <form @submit.prevent class="space-y-5">
                 <div>
-                  <label class="block text-sm text-gray-400 mb-2">ชื่อ-นามสกุล</label>
-                  <input type="text" class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-gray-600 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 focus:outline-none transition-all" placeholder="กรอกชื่อของคุณ" />
+                  <label class="block text-sm text-gray-400 mb-2">{{ $t('contact.form.name') }}</label>
+                  <input type="text" class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-gray-600 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 focus:outline-none transition-all" :placeholder="$t('contact.form.namePlaceholder')" />
                 </div>
                 <div>
-                  <label class="block text-sm text-gray-400 mb-2">อีเมล</label>
+                  <label class="block text-sm text-gray-400 mb-2">{{ $t('contact.form.email') }}</label>
                   <input type="email" class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-gray-600 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 focus:outline-none transition-all" placeholder="your@email.com" />
                 </div>
                 <div>
-                  <label class="block text-sm text-gray-400 mb-2">เบอร์โทร</label>
-                  <input type="tel" class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-gray-600 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 focus:outline-none transition-all" placeholder="0xx-xxx-xxxx" />
+                  <label class="block text-sm text-gray-400 mb-2">{{ $t('contact.form.phone') }}</label>
+                  <input type="tel" class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-gray-600 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 focus:outline-none transition-all" :placeholder="$t('contact.form.phonePlaceholder')" />
                 </div>
                 <div>
-                  <label class="block text-sm text-gray-400 mb-2">ข้อความ</label>
-                  <textarea rows="5" class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-gray-600 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 focus:outline-none transition-all resize-none" placeholder="บอกเราว่าคุณต้องการอะไร..."></textarea>
+                  <label class="block text-sm text-gray-400 mb-2">{{ $t('contact.form.message') }}</label>
+                  <textarea rows="5" class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder-gray-600 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/20 focus:outline-none transition-all resize-none" :placeholder="$t('contact.form.messagePlaceholder')"></textarea>
                 </div>
                 <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/25">
-                  ส่งข้อความ
+                  {{ $t('contact.form.submit') }}
                 </button>
               </form>
             </div>
           </div>
-          <!-- Map -->
           <div class="w-full lg:w-1/2">
             <div class="glass-card overflow-hidden h-full min-h-[400px]">
               <iframe
@@ -75,11 +70,13 @@
 </template>
 
 <script setup>
-useSeoMeta({ title: 'ติดต่อเรา - OneSiamSoft', description: 'ติดต่อทีมงาน OneSiamSoft' })
+const { t } = useI18n()
+useSeoMeta({ title: `${t('contact.hero.title')} - OneSiamSoft`, description: t('contact.hero.subtitle') })
 
-const contactInfo = [
-  { icon: 'lucide:mail', title: 'อีเมล', detail: 'support@onesiamsoft.com' },
-  { icon: 'lucide:map-pin', title: 'ที่อยู่', detail: '28/99 ซอยหมู่บ้านบ่อฝ้าย ต.หัวหิน อ.หัวหิน จ.ประจวบคีรีขันธ์ 77110' },
-  { icon: 'lucide:clock', title: 'เวลาทำการ', detail: 'เปิดให้บริการ 24 ชั่วโมง ทุกวัน' },
-]
+const contactInfo = computed(() => [
+  { icon: 'lucide:mail', title: t('contact.form.email'), detail: t('contact.info.email') },
+  { icon: 'lucide:map-pin', title: locale.value === 'th' ? 'ที่อยู่' : 'Address', detail: t('contact.info.address') },
+  { icon: 'lucide:clock', title: locale.value === 'th' ? 'เวลาทำการ' : 'Hours', detail: t('contact.info.hours') },
+])
+const { locale } = useI18n()
 </script>

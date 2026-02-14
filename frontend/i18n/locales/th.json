@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "home": "หน้าแรก",
+    "services": "บริการ",
+    "portfolio": "ผลงาน",
+    "blog": "บล็อก",
+    "about": "เกี่ยวกับเรา",
+    "contact": "ติดต่อเรา"
+  },
+  "home": {
+    "hero": {
+      "title1": "Cloud Infrastructure",
+      "title2": "ระดับองค์กร",
+      "subtitle": "โครงสร้างพื้นฐานคลาวด์ที่เสถียร ปลอดภัย และรวดเร็ว สำหรับธุรกิจที่ต้องการความเชื่อถือได้สูงสุด",
+      "cta": "เริ่มต้นใช้งาน",
+      "cta2": "ดูแพ็คเกจ"
+    },
+    "services": {
+      "title": "บริการของเรา",
+      "subtitle": "โซลูชันครบวงจร ตอบโจทย์ทุกความต้องการด้าน IT Infrastructure",
+      "cloudServer": "Cloud Server",
+      "cloudServerDesc": "เซิร์ฟเวอร์คลาวด์ประสิทธิภาพสูง NVMe SSD พร้อม DDoS Protection รองรับทุก workload",
+      "webHosting": "Web Hosting",
+      "webHostingDesc": "โฮสติ้งเร็วแรง ด้วย LiteSpeed Web Server พร้อม cPanel จัดการง่าย",
+      "domain": "Domain",
+      "domainDesc": "จดโดเมนทุกนามสกุล .com .co.th .in.th ราคาประหยัด ต่ออายุอัตโนมัติ",
+      "dedicatedServer": "Dedicated Server",
+      "dedicatedServerDesc": "เซิร์ฟเวอร์เฉพาะ ทรัพยากรเต็มเครื่อง สำหรับงานที่ต้องการพลังสูงสุด",
+      "businessEmail": "Business Email",
+      "businessEmailDesc": "อีเมลธุรกิจ {'@'}yourdomain.com สร้างความน่าเชื่อถือ พร้อม Spam Filter",
+      "wordpress": "WordPress Hosting",
+      "wordpressDesc": "โฮสติ้งสำหรับ WordPress โดยเฉพาะ เร็วแรง ปลอดภัย อัพเดทอัตโนมัติ"
+    },
+    "whyUs": {
+      "title": "ทำไมต้องเลือกเรา",
+      "subtitle": "ด้วยประสบการณ์กว่า 9 ปี เราพร้อมดูแลธุรกิจของคุณ",
+      "uptime": "Uptime 99.9%",
+      "uptimeDesc": "ระบบเสถียร การันตี SLA ทำงานต่อเนื่องตลอด 24 ชั่วโมง",
+      "support": "ซัพพอร์ต 24/7",
+      "supportDesc": "ทีมผู้เชี่ยวชาญพร้อมช่วยเหลือตลอดเวลา ทุกช่องทาง",
+      "security": "ปลอดภัยสูงสุด",
+      "securityDesc": "DDoS Protection, Firewall, SSL Certificate ครบทุกชั้น",
+      "speed": "เร็วแรงทันใจ",
+      "speedDesc": "NVMe SSD, LiteSpeed Server, CDN เร็วกว่าถึง 10 เท่า"
+    },
+    "stats": {
+      "clients": "ลูกค้าที่ไว้วางใจ",
+      "uptime": "Uptime",
+      "support": "ซัพพอร์ต",
+      "experience": "ปีประสบการณ์"
+    },
+    "cta": {
+      "title": "พร้อมยกระดับธุรกิจของคุณ?",
+      "subtitle": "ปรึกษาผู้เชี่ยวชาญฟรี ไม่มีค่าใช้จ่าย",
+      "button": "ปรึกษาฟรี"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "บริการของเรา",
+      "subtitle": "โซลูชันครบวงจรด้าน Cloud Infrastructure และ Web Solutions"
+    },
+    "pricing": {
+      "title": "แพ็คเกจราคา",
+      "subtitle": "เลือกแพ็คเกจที่เหมาะกับธุรกิจของคุณ",
+      "starter": "Starter",
+      "business": "Business",
+      "enterprise": "Enterprise",
+      "recommend": "แนะนำ",
+      "perMonth": "/เดือน",
+      "select": "เลือกแพ็คเกจ",
+      "contactUs": "ติดต่อเรา"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "เกี่ยวกับเรา",
+      "subtitle": "ผู้ให้บริการ Cloud Infrastructure ชั้นนำของประเทศไทย"
+    },
+    "story": {
+      "title": "เรื่องราวของเรา",
+      "desc": "บริษัท วัน สยามซอฟท์ จำกัด ก่อตั้งขึ้นในปี 2015 ด้วยวิสัยทัศน์ในการเป็นผู้ให้บริการ Cloud Infrastructure ที่ดีที่สุดในประเทศไทย"
+    },
+    "timeline": {
+      "title": "เส้นทางของเรา"
+    },
+    "values": {
+      "title": "คุณค่าของเรา",
+      "reliability": "ความเสถียร",
+      "reliabilityDesc": "ระบบ Redundancy ครบทุกชั้น การันตี Uptime 99.9%",
+      "innovation": "นวัตกรรม",
+      "innovationDesc": "อัพเดทเทคโนโลยีล่าสุดอยู่เสมอ เพื่อบริการที่ดีที่สุด",
+      "trust": "ความไว้วางใจ",
+      "trustDesc": "ลูกค้ากว่า 1,000 รายที่ไว้วางใจให้เราดูแลระบบ"
+    }
+  },
+  "blog": {
+    "hero": {
+      "title": "บล็อก",
+      "subtitle": "ความรู้และเทคนิคเกี่ยวกับ Cloud, Hosting และ IT"
+    },
+    "readMore": "อ่านต่อ",
+    "minRead": "นาทีอ่าน",
+    "backToBlog": "กลับไปบล็อก",
+    "relatedPosts": "บทความที่เกี่ยวข้อง",
+    "interested": "สนใจบริการของเรา?",
+    "interestedDesc": "ปรึกษาทีมงานผู้เชี่ยวชาญฟรี ไม่มีค่าใช้จ่าย"
+  },
+  "portfolio": {
+    "hero": {
+      "title": "ผลงาน",
+      "subtitle": "โปรเจกต์ที่เราภูมิใจนำเสนอ"
+    },
+    "cta": {
+      "title": "มีโปรเจกต์ในใจ?",
+      "subtitle": "ให้เราช่วยสร้างโซลูชันที่ตรงกับความต้องการของคุณ",
+      "button": "ปรึกษาฟรี"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "ติดต่อเรา",
+      "subtitle": "พร้อมให้บริการและตอบทุกคำถามของคุณ"
+    },
+    "form": {
+      "title": "ส่งข้อความถึงเรา",
+      "name": "ชื่อ-นามสกุล",
+      "namePlaceholder": "กรอกชื่อของคุณ",
+      "email": "อีเมล",
+      "phone": "เบอร์โทร",
+      "phonePlaceholder": "0xx-xxx-xxxx",
+      "message": "ข้อความ",
+      "messagePlaceholder": "บอกเราว่าคุณต้องการอะไร...",
+      "submit": "ส่งข้อความ"
+    },
+    "info": {
+      "email": "support{'@'}onesiamsoft.com",
+      "address": "28/99 ซอยหมู่บ้านบ่อฝ้าย ต.หัวหิน อ.หัวหิน จ.ประจวบคีรีขันธ์ 77110",
+      "hours": "เปิดให้บริการ 24 ชั่วโมง"
+    }
+  },
+  "footer": {
+    "description": "ผู้ให้บริการ Cloud Infrastructure และ Web Solutions ครบวงจร",
+    "services": "บริการ",
+    "company": "บริษัท",
+    "contact": "ติดต่อ",
+    "hours": "เปิดให้บริการ 24 ชั่วโมง",
+    "rights": "สงวนลิขสิทธิ์",
+    "backToTop": "กลับด้านบน"
+  },
+  "common": {
+    "learnMore": "เรียนรู้เพิ่มเติม",
+    "getStarted": "เริ่มต้นใช้งาน",
+    "contactUs": "ติดต่อเรา",
+    "freeConsult": "ปรึกษาฟรี"
+  }
+}

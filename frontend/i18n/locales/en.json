@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title1": "Enterprise Cloud",
+      "title2": "Infrastructure",
+      "subtitle": "Reliable, secure, and lightning-fast cloud infrastructure for businesses that demand the highest standards of performance.",
+      "cta": "Get Started",
+      "cta2": "View Plans"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Complete solutions for all your IT infrastructure needs",
+      "cloudServer": "Cloud Server",
+      "cloudServerDesc": "High-performance cloud servers with NVMe SSD and DDoS Protection for any workload",
+      "webHosting": "Web Hosting",
+      "webHostingDesc": "Blazing fast hosting with LiteSpeed Web Server and easy cPanel management",
+      "domain": "Domain",
+      "domainDesc": "Register domains in all extensions — .com .co.th .in.th at affordable prices",
+      "dedicatedServer": "Dedicated Server",
+      "dedicatedServerDesc": "Full dedicated resources for workloads that demand maximum performance",
+      "businessEmail": "Business Email",
+      "businessEmailDesc": "Professional email {'@'}yourdomain.com with Spam Filter and security",
+      "wordpress": "WordPress Hosting",
+      "wordpressDesc": "Optimized hosting for WordPress — fast, secure, auto-updates included"
+    },
+    "whyUs": {
+      "title": "Why Choose Us",
+      "subtitle": "With over 9 years of experience, we're ready to support your business",
+      "uptime": "99.9% Uptime",
+      "uptimeDesc": "Stable systems with SLA guarantee, running 24/7 without interruption",
+      "support": "24/7 Support",
+      "supportDesc": "Expert team ready to help anytime, through every channel",
+      "security": "Maximum Security",
+      "securityDesc": "DDoS Protection, Firewall, SSL Certificate — complete multi-layer security",
+      "speed": "Lightning Fast",
+      "speedDesc": "NVMe SSD, LiteSpeed Server, CDN — up to 10x faster performance"
+    },
+    "stats": {
+      "clients": "Trusted Clients",
+      "uptime": "Uptime",
+      "support": "Support",
+      "experience": "Years Experience"
+    },
+    "cta": {
+      "title": "Ready to Elevate Your Business?",
+      "subtitle": "Get free consultation with our experts — no obligation",
+      "button": "Free Consultation"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Our Services",
+      "subtitle": "Complete Cloud Infrastructure and Web Solutions"
+    },
+    "pricing": {
+      "title": "Pricing Plans",
+      "subtitle": "Choose the plan that fits your business",
+      "starter": "Starter",
+      "business": "Business",
+      "enterprise": "Enterprise",
+      "recommend": "Recommended",
+      "perMonth": "/month",
+      "select": "Select Plan",
+      "contactUs": "Contact Us"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "Thailand's leading Cloud Infrastructure provider"
+    },
+    "story": {
+      "title": "Our Story",
+      "desc": "OneSiamSoft Co., Ltd. was founded in 2015 with a vision to become the best Cloud Infrastructure provider in Thailand."
+    },
+    "timeline": {
+      "title": "Our Journey"
+    },
+    "values": {
+      "title": "Our Values",
+      "reliability": "Reliability",
+      "reliabilityDesc": "Complete redundancy at every layer, guaranteed 99.9% uptime",
+      "innovation": "Innovation",
+      "innovationDesc": "Always adopting the latest technology for the best service",
+      "trust": "Trust",
+      "trustDesc": "Over 1,000 clients trust us to manage their infrastructure"
+    }
+  },
+  "blog": {
+    "hero": {
+      "title": "Blog",
+      "subtitle": "Tips and knowledge about Cloud, Hosting, and IT"
+    },
+    "readMore": "Read More",
+    "minRead": "min read",
+    "backToBlog": "Back to Blog",
+    "relatedPosts": "Related Posts",
+    "interested": "Interested in our services?",
+    "interestedDesc": "Get free consultation with our experts — no obligation"
+  },
+  "portfolio": {
+    "hero": {
+      "title": "Portfolio",
+      "subtitle": "Projects we're proud to showcase"
+    },
+    "cta": {
+      "title": "Have a Project in Mind?",
+      "subtitle": "Let us help build the perfect solution for your needs",
+      "button": "Free Consultation"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "We're ready to serve and answer all your questions"
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "phone": "Phone",
+      "phonePlaceholder": "0xx-xxx-xxxx",
+      "message": "Message",
+      "messagePlaceholder": "Tell us what you need...",
+      "submit": "Send Message"
+    },
+    "info": {
+      "email": "support{'@'}onesiamsoft.com",
+      "address": "28/99 Soi Ban Bo Fai, Hua Hin, Prachuap Khiri Khan 77110, Thailand",
+      "hours": "Open 24 Hours"
+    }
+  },
+  "footer": {
+    "description": "Complete Cloud Infrastructure and Web Solutions provider",
+    "services": "Services",
+    "company": "Company",
+    "contact": "Contact",
+    "hours": "Open 24 Hours",
+    "rights": "All rights reserved",
+    "backToTop": "Back to Top"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "freeConsult": "Free Consultation"
+  }
+}

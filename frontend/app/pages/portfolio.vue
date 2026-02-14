@@ -8,8 +8,8 @@
         <div class="absolute inset-0 bg-gradient-to-b from-[#0c1222]/80 via-[#0c1222]/70 to-[#0c1222]"></div>
       </div>
       <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 text-center">
-        <h1 class="text-4xl lg:text-6xl font-bold text-white tracking-tight">ผลงาน</h1>
-        <p class="section-subtitle mt-4">โปรเจกต์ที่เราภูมิใจนำเสนอ</p>
+        <h1 class="text-4xl lg:text-6xl font-bold text-white tracking-tight">{{ $t('portfolio.hero.title') }}</h1>
+        <p class="section-subtitle mt-4">{{ $t('portfolio.hero.subtitle') }}</p>
       </div>
     </section>
 
